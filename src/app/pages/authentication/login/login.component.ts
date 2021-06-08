@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { fadeInUpAnimation } from '../../../../@fury/animations/fade-in-up.animation';
+import {AppService} from '../../../app.service';
 
 @Component({
   selector: 'fury-login',
@@ -12,6 +13,8 @@ import { fadeInUpAnimation } from '../../../../@fury/animations/fade-in-up.anima
 })
 export class LoginComponent implements OnInit {
 
+  credentials = {username: '', password: ''};
+
   form: FormGroup;
 
   inputType = 'password';
@@ -20,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private fb: FormBuilder,
               private cd: ChangeDetectorRef,
-              private snackbar: MatSnackBar
+              private snackbar: MatSnackBar,
+              private app: AppService
   ) {
   }
 
@@ -32,9 +36,12 @@ export class LoginComponent implements OnInit {
   }
 
   send() {
-    this.router.navigate(['/']);
     this.snackbar.open('Lucky you! Looks like you didn\'t need a password or email address! For a real application we provide validators to prevent this. ;)', 'LOL THANKS', {
       duration: 10000
+    });
+
+    this.app.authenticate(this.credentials, () => {
+      this.router.navigate(['/dashboard']);
     });
   }
 

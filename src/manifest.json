@@ -1,6 +1,6 @@
 {
-  "name": "Fury",
-  "short_name": "Fury",
+  "name": "FestFinder",
+  "short_name": "FF",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

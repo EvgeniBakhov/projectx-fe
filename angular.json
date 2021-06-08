@@ -8,7 +8,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "fury",
+      "prefix": "fest-finder",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
