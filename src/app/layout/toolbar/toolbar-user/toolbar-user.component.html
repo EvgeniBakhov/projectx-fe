@@ -1,8 +1,8 @@
 <div class="toolbar-user" (furyClickOutside)="onClickOutside()" fxFlex="grow">
     <button class="button" mat-button (click)="toggleDropdown()" [class.open]="isOpen" fxFlex="grow">
     <span fxLayout="row" fxLayoutAlign="start center">
-      <img class="avatar" src="assets/img/avatars/default.jpg">
-      <span class="name" fxHide fxShow.gt-sm>David Smith</span>
+      <img class="avatar" src="assets/img/avatars/default.png">
+      <span class="name" fxHide fxShow.gt-sm>Elon Musk</span>
       <mat-icon class="icon" fxHide fxShow.gt-sm>keyboard_arrow_down</mat-icon>
     </span>
   </button>
@@ -11,16 +11,16 @@
     <div class="content">
       <div class="list">
         <div class="list-item" matRipple>
-          <mat-icon class="list-item-icon">account_circle</mat-icon>
+          <mat-icon class="list-item-icon">portrait</mat-icon>
           <span>Profile</span>
         </div>
         <div class="list-item" matRipple>
-          <mat-icon class="list-item-icon">settings</mat-icon>
-          <span>Settings</span>
+          <mat-icon class="list-item-icon">book</mat-icon>
+          <span>My Bookings</span>
         </div>
         <div class="list-item" matRipple>
-          <mat-icon class="list-item-icon">help</mat-icon>
-          <span>Help</span>
+          <mat-icon class="list-item-icon">event_available</mat-icon>
+          <span>My Reservations</span>
         </div>
         <mat-divider></mat-divider>
         <div class="list-item" matRipple [routerLink]="['/login']">

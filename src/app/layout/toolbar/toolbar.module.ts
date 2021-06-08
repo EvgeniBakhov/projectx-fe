@@ -15,6 +15,7 @@ import { ToolbarSidenavMobileToggleComponent } from './toolbar-sidenav-mobile-to
 import { ToolbarUserComponent } from './toolbar-user/toolbar-user.component';
 import { ToolbarComponent } from './toolbar.component';
 import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.component';
+import { ToolbarLogoComponent } from './toolbar-logo/toolbar-logo.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.componen
     ToolbarQuickpanelToggleComponent,
     ToolbarFullscreenToggleComponent,
     ToolbarSidenavMobileToggleComponent,
-    HeaderToolbarComponent
+    HeaderToolbarComponent,
+    ToolbarLogoComponent
   ],
   exports: [ToolbarComponent]
 })

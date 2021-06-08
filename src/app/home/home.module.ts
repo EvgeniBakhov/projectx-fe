@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HomeComponent} from './home.component';
 import {ToolbarModule} from '../layout/toolbar/toolbar.module';
+import {LoadingIndicatorModule} from '../../@fury/shared/loading-indicator/loading-indicator.module';
 
 
 
@@ -9,7 +10,8 @@ import {ToolbarModule} from '../layout/toolbar/toolbar.module';
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    ToolbarModule
+    ToolbarModule,
+    LoadingIndicatorModule
   ],
   exports: [HomeComponent]
 })

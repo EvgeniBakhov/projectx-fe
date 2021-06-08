@@ -118,13 +118,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "fury",
+      "ff",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "fury",
+      "ff",
       "kebab-case"
     ],
     "no-output-on-prefix": true,

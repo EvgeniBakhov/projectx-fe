@@ -1,7 +1,12 @@
+<fury-loading-indicator></fury-loading-indicator>
+
+<div class="container" fxLayout="column">
+    <ng-container>
+        <ng-container *ngTemplateOutlet="toolbar"></ng-container>
+    </ng-container>
+</div>
+
 <ng-template #toolbar>
     <!-- TOOLBAR -->
-    <fury-toolbar (openQuickPanel)="openQuickPanel()"
-                  [hasNavigation]="topNavigation$ | async"
-                  (openSidenav)="openSidenav()"
-                  *ngIf="toolbarVisible$ | async"
-                  fxFlex="none"></fury-toolbar>
+    <fury-toolbar></fury-toolbar>
+</ng-template>
