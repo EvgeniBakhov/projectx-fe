@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2020 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4.23332cm" height="4.23332cm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 4233.32 4233.32"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#17202B;stroke-width:101.6;stroke-miterlimit:22.9256}
+    .fil1 {fill:#17202B}
+    .fil0 {fill:url(#id0)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="846.64" y1="3670.57" x2="3412.08" y2="544.28">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A74993"/>
+   <stop offset="0.419608" style="stop-opacity:1; stop-color:#F08887"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F9B854"/>
+  </linearGradient>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0 str0" d="M627.96 875.38c759.66,-821.26 2047.69,-935.41 2876.89,-254.97 829.2,680.44 885.58,1897.81 125.92,2719.07 -759.66,821.25 -2047.7,935.41 -2876.9,254.97 -829.2,-680.45 -885.57,-1897.82 -125.91,-2719.07z"/>
+  <polygon class="fil1" points="968.79,3194.64 1267.12,3228.93 1164.25,3568.39 "/>
+  <polygon class="fil1" points="1001.46,2897.08 1310.08,3005.3 1110,3316.86 "/>
+  <polygon class="fil1" points="1071.83,2583.44 1361.1,2765.16 1117.24,3043.78 "/>
+  <polygon class="fil1" points="1012.66,3489.57 1277.41,3482.68 1214.09,3837.56 "/>
+  <polygon class="fil1" points="1178.12,2357.11 1448.52,2523.41 1223.52,2781.45 "/>
+  <polygon class="fil1" points="1293,2120.51 1542.81,2329.68 1309.24,2534.58 "/>
+  <polygon class="fil1" points="1038.11,3713.59 1340.59,3703.27 1239.68,3958.01 "/>
+  <polygon class="fil1" points="1418.16,1928.49 1631.98,2106.78 1402.39,2258.9 "/>
+  <polygon class="fil1" points="1536.44,1837.63 1691.99,1969.62 1517.19,2093.7 "/>
+  <path class="fil1" d="M1614.22 1903.62l1.97 -107.3 -185.17 -6.86 -116.58 -150.87 24 144 -178.3 6.87 -99.44 -133.73 6.86 147.44 -226.32 48.01 -44.58 -123.44 -24 147.44 -233.17 78.87c104.01,-523.49 454.91,-628.65 949.83,-459.48l-85.72 -157.74 -41.15 -168.02 -20.58 106.31 -212.6 -147.45 -24 -144.01 -58.29 89.15 -126.87 -58.29 -277.75 -123.45c366.9,-218.31 920.7,50.29 1090.41,476.62 418.39,-253.75 737.32,-102.9 946.54,185.12l-253.74 -6.86 -150.87 -130.29 27.43 130.29 -233.17 27.44 -75.44 -75.44 -13.71 102.87 -75.44 54.86c629.78,84.59 878.94,693.79 912.09,1158.98l-226.3 -356.61 27.42 -102.87 -89.14 29.16 -360.03 -305.18 58.3 -92.58 -109.73 60 -113.17 -51.43c156.01,250.88 148.27,532.62 12.82,841.79l-119.16 -489.5 49.72 -74.58 -65.15 -13.71 -108.92 -264.91 54.86 -54.86 -60.87 -8.58 -39.44 -67.71 -113.45 40.53z"/>
+  <ellipse class="fil1" cx="3174.83" cy="1256.28" rx="342.89" ry="322.32"/>
+  <polygon class="fil1" points="2048.93,3248.98 2254.67,3245.54 2072.94,2940.37 2295.82,3242.11 2847.87,3252.4 2498.13,3622.72 2504.98,3921.04 2679.86,3975.91 2240.96,3979.33 2405.54,3921.04 2405.54,3615.87 "/>
+ </g>
+</svg>

@@ -10,8 +10,9 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@ang
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarConfig } from '@angular/material/snack-bar';
 import {AuthModule} from './auth/auth.module';
 import { HeaderComponent } from './shared/components/header/header.component';
-import { HomeComponent } from './home/home.component';
 import {RouterModule} from '@angular/router';
+import {ToolbarModule} from './layout/toolbar/toolbar.module';
+import {HomeModule} from './home/home.module';
 
 @NgModule({
   imports: [
@@ -31,11 +32,12 @@ import {RouterModule} from '@angular/router';
 
     // Register a Service Worker (optional)
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-      AuthModule,
+    AuthModule,
 
-      RouterModule
+    RouterModule,
+    HomeModule
   ],
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [
     {

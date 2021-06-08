@@ -7,7 +7,7 @@
 }
 
 .card {
-  width: 380px;
+  width: fit-content;
 
   @include media-xs {
     width: 300px;
@@ -16,10 +16,21 @@
   .header {
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
+    color: white;
   }
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
+}
+
+.register-column {
+  min-width: 300px;
+}
+
+.page {
+  background: linear-gradient(-45deg, #A74993, #F08887, #F9B854, #F9B854);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }

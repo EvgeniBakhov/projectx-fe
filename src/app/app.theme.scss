@@ -6,11 +6,11 @@
 // $theme-accent:  mat-palette($mat-light-blue, 500, 200, 700);
 
 $theme-primary-hue: 700;
-$theme-accent-hue: 500;
+$theme-accent-hue: 900;
 $theme-warn-hue: 500;
 
-$theme-primary: mat-palette($mat-blue, $theme-primary-hue);
-$theme-accent: mat-palette($mat-teal, $theme-accent-hue);
+$theme-primary: mat-palette($mat-pink, $theme-primary-hue);
+$theme-accent: mat-palette($mat-gray, $theme-accent-hue);
 $theme-warn: mat-palette($mat-red, $theme-warn-hue);
 
 $theme: mat-light-theme((

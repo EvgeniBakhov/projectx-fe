@@ -17,7 +17,7 @@ Support is available through email, ThemeForest comments or chat. If you purchas
          * [Generating the first Component](#generating-the-first-component)
          * [Generating a Service in a specific folder](#generating-a-service-in-a-specific-folder)
          * [Live-Preview and App-Start](#live-preview-and-app-start)
-      * [Customizing](#customizing)
+      * [CustoFmizing](#customizing)
          * [Add a Menu Item](#add-a-menu-item)
          * [Breadcrumbs](#breadcrumbs)
          * [Receive, send and map data to a server with GET and POST requests](#receive-send-and-map-data-to-a-server-with-get-and-post-requests)

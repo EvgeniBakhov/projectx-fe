@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('./pages/authentication/login/login.module').then(m => m.LoginModule),
+    loadChildren: () => import('./auth/components/login/login.module').then(m => m.LoginModule),
   },
   {
     path: 'register',
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'coming-soon',
     loadChildren: () => import('./pages/coming-soon/coming-soon.module').then(m => m.ComingSoonModule),
+  },
+  {
+    path: 'home',
+    loadChildren: () => import(`./home/home.module`).then(m => m.HomeModule)
   },
   {
     path: '',
