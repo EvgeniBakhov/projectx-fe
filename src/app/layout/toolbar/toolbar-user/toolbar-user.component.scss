@@ -62,6 +62,8 @@
         position: relative;
         cursor: pointer;
         outline: none;
+        min-width: max-content;
+        width: 100%;
 
         .list-item-icon {
           padding-right: $spacing/1.5;

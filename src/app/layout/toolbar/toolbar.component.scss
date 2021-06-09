@@ -8,7 +8,6 @@
 .toolbar {
   padding-right: 0;
   height: $toolbar-height;
-  padding-left: $spacing;
   max-width: 100%;
 
   .top-logo {
@@ -22,6 +21,21 @@
   .toolbar-button {
     border-left-width: 1px;
     border-left-style: solid;
+    display: flex;
+  }
+
+  .toolbar-text-button {
+    display: flex;
+    width: max-content;
+    min-width: 8rem;
+    padding-left: $padding-xs;
+    padding-right: $padding-xs;
+    align-items: center;
+    justify-content: center;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: beige;
+    font: var(--font-subheading-1);
     display: flex;
   }
 
