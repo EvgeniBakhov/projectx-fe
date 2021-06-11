@@ -16,27 +16,29 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardService } from './dashboard.service';
 import { FurySharedModule } from '../../../@fury/fury-shared.module';
+import {AppModule} from '../../app.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    MaterialModule,
-    FurySharedModule,
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        MaterialModule,
+        FurySharedModule,
 
-    // Widgets
-    BarChartWidgetModule,
-    LineChartWidgetModule,
-    DonutChartWidgetModule,
-    SalesSummaryWidgetModule,
-    AudienceOverviewWidgetModule,
-    RealtimeUsersWidgetModule,
-    QuickInfoWidgetModule,
-    RecentSalesWidgetModule,
-    AdvancedPieChartWidgetModule,
-    MapsWidgetModule,
-    MarketWidgetModule
-  ],
+        // Widgets
+        BarChartWidgetModule,
+        LineChartWidgetModule,
+        DonutChartWidgetModule,
+        SalesSummaryWidgetModule,
+        AudienceOverviewWidgetModule,
+        RealtimeUsersWidgetModule,
+        QuickInfoWidgetModule,
+        RecentSalesWidgetModule,
+        AdvancedPieChartWidgetModule,
+        MapsWidgetModule,
+        MarketWidgetModule,
+        AppModule
+    ],
   declarations: [DashboardComponent],
   providers: [DashboardService]
 })

@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <div [style]="dotColor"></div>
+        <mat-card-title>
+            {{event.name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{event.startDate | date: 'MMM d, y, h:mm a'}}
+        </mat-card-subtitle>
+        <div fxLayout="row" fxFlex="grow">
+            <mat-icon>location_on</mat-icon>
+            {{event.address | address}}
+        </div>
+        <img [src] = "event.thumbnail">
+        <mat-card-content>
+            {{event.description}}
+        </mat-card-content>
+        <mat-card-footer>
+            <img class="age-rating" [src]="event.ageRestrictions | pegiRating"/>
+            <mat-icon>event-seat</mat-icon>
+            <span>
+                {{event.availableSeats > 100 ? '100+' : event.availableSeats}}
+            </span>
+        </mat-card-footer>
+    </mat-card-header>
+</mat-card>

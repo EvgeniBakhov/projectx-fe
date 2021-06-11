@@ -12,6 +12,9 @@ import { RecentSalesWidgetOptions } from './widgets/recent-sales-widget/recent-s
 import { SalesSummaryWidgetOptions } from './widgets/sales-summary-widget/sales-summary-widget-options.interface';
 import { DashboardService } from './dashboard.service';
 import { ChartWidgetOptions } from '../../../@fury/shared/chart-widget/chart-widget-options.interface';
+import {AgeRestriction} from '../../model/enums/age-restriction';
+import {EventType} from '../../model/enums/event-type';
+import {EventStatus} from '../../model/enums/event-status';
 
 @Component({
   selector: 'fury-dashboard',
@@ -20,7 +23,48 @@ import { ChartWidgetOptions } from '../../../@fury/shared/chart-widget/chart-wid
 })
 export class DashboardComponent implements OnInit {
 
+  constructor(private dashboardService: DashboardService,
+              private router: Router) {
+    /**
+     * Edge wrong drawing fix
+     * Navigate anywhere and on Promise right back
+     */
+    if (/Edge/.test(navigator.userAgent)) {
+      if (DashboardComponent.isInitialLoad) {
+        this.router.navigate(['/apps/chat']).then(() => {
+          this.router.navigate(['/']);
+        });
+
+        DashboardComponent.isInitialLoad = false;
+      }
+    }
+
+  }
+
   private static isInitialLoad = true;
+
+  public eventMock = {
+    id : '123',
+    name: 'Cinema festival',
+    description: 'Wonderful event!',
+    startDate: '10/07/2021, 11:30:36 AM',
+    endDate: '11/07/2021, 11:30:36 AM',
+    capacity: 1000,
+    availableSeats: 1000,
+    ageRestrictions: AgeRestriction.EVERYONE,
+    address: {
+      region: 'Europe',
+      country: 'Italy',
+      city: 'Milan',
+      street: 'Unnamed road 101'
+    },
+    organizer: { },
+    type: EventType.FESTIVAL,
+    status: EventStatus.PLANNED,
+    pictures: [],
+    thumbnail: '.assets/mock/event-example.jpg'
+  };
+
   salesData$: Observable<ChartData>;
   totalSalesOptions: BarChartWidgetOptions = {
     title: 'Total Sales',
@@ -94,28 +138,9 @@ export class DashboardComponent implements OnInit {
   private _gap = 16;
   gap = `${this._gap}px`;
 
-  constructor(private dashboardService: DashboardService,
-              private router: Router) {
-    /**
-     * Edge wrong drawing fix
-     * Navigate anywhere and on Promise right back
-     */
-    if (/Edge/.test(navigator.userAgent)) {
-      if (DashboardComponent.isInitialLoad) {
-        this.router.navigate(['/apps/chat']).then(() => {
-          this.router.navigate(['/']);
-        });
-
-        DashboardComponent.isInitialLoad = false;
-      }
-    }
-
-  }
-
   col(colAmount: number) {
     return `1 1 calc(${100 / colAmount}% - ${this._gap - (this._gap / colAmount)}px)`;
   }
-
   /**
    * Everything implemented here is purely for Demo-Demonstration and can be removed and replaced with your implementation
    */

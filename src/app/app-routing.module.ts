@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/coming-soon/coming-soon.module').then(m => m.ComingSoonModule),
   },
   {
-    path: 'home',
-    loadChildren: () => import(`./home/home.module`).then(m => m.HomeModule)
-  },
-  {
     path: '',
     component: LayoutComponent,
     children: [

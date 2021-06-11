@@ -20,4 +20,5 @@ export interface Event {
     placeType: PlaceType;
     status: EventStatus;
     pictures: string[];
+    thumbnail: string;
 }

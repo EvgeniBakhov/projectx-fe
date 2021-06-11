@@ -9,10 +9,15 @@ import { PendingInterceptorModule } from '../@fury/shared/loading-indicator/pend
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material/form-field';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarConfig } from '@angular/material/snack-bar';
 import {AuthModule} from './auth/auth.module';
-import { HeaderComponent } from './shared/components/header/header.component';
 import {RouterModule} from '@angular/router';
-import {ToolbarModule} from './layout/toolbar/toolbar.module';
-import {HomeModule} from './home/home.module';
+import { EventCardComponent } from './cards/event-card/event-card.component';
+import { EstateCardComponent } from './cards/estate-card/estate-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {FlexModule} from '@angular/flex-layout';
+import { AddressPipe } from './pipes/address.pipe';
+import { PegiRatingPipe } from './pipes/pegi-rating.pipe';
+
 
 @NgModule({
   imports: [
@@ -35,10 +40,15 @@ import {HomeModule} from './home/home.module';
     AuthModule,
 
     RouterModule,
-    HomeModule
+    MatCardModule,
+    MatIconModule,
+    FlexModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, EventCardComponent, EstateCardComponent, AddressPipe, PegiRatingPipe],
   bootstrap: [AppComponent],
+  exports: [
+    EventCardComponent
+  ],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,

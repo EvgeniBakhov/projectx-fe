@@ -118,13 +118,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "ff",
+      "fest-finder",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "ff",
+      "fest-finder",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
