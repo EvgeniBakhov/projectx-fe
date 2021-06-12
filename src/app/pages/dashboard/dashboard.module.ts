@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardService } from './dashboard.service';
 import { FurySharedModule } from '../../../@fury/fury-shared.module';
 import {CardsModule} from '../../cards/cards.module';
+import {LayoutModule} from '../../layout/layout.module';
 
 @NgModule({
     imports: [
@@ -37,7 +38,8 @@ import {CardsModule} from '../../cards/cards.module';
         AdvancedPieChartWidgetModule,
         MapsWidgetModule,
         MarketWidgetModule,
-        CardsModule
+        CardsModule,
+        LayoutModule
     ],
   declarations: [DashboardComponent],
   providers: [DashboardService]

@@ -1,0 +1,13 @@
+mat-card {
+  max-width: fit-content;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

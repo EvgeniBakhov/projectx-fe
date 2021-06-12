@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card (click)="onClick()" )>
     <mat-card-header>
         <mat-card-title>
             <div class="{{dotColor}}"></div>
@@ -16,7 +16,7 @@
     </mat-card-header>
     <mat-card-content>
         <img [src]="event.thumbnail">
-        <div class="description">{{event.description}}</div>
+        <div class="description fade">{{event.description}}</div>
     </mat-card-content>
     <mat-card-footer>
         <img class="age-rating" [src]="event.ageRestrictions | pegiRating"/>

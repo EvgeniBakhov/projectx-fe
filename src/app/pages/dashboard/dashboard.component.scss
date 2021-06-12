@@ -1,5 +1,6 @@
 .dashboard {
   display: flex;
+  height: 100%;
 
   /* Put a card in the next row when previous cards take all width */
   flex-wrap: wrap;

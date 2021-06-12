@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-form-field fxFlex="280px">
+        <mat-label>Select a city</mat-label>
+        <input [disabled]="cities" formControlName="city" matInput [matAutocomplete]="auto" [formControl]="ctrlCities">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let city of filteredCities | async" [value]="city">
+                <span>{{ city }}</span>
+            </mat-option>
+        </mat-autocomplete>
+        <button *ngIf="ctrlCities.value" type="button" mat-icon-button (click)="ctrlCities.reset()" matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+        <button *ngIf="!ctrlCities.value" type="button" mat-icon-button matSuffix>
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-hint></mat-hint>
+    </mat-form-field>
+    <button type="button" mat-raised-button color="primary">
+        <mat-icon>search</mat-icon>
+    </button>
+</mat-card>
