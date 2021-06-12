@@ -17,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {FlexModule} from '@angular/flex-layout';
 import { AddressPipe } from './pipes/address.pipe';
 import { PegiRatingPipe } from './pipes/pegi-rating.pipe';
+import {CardsModule} from './cards/cards.module';
 
 
 @NgModule({
@@ -38,16 +39,11 @@ import { PegiRatingPipe } from './pipes/pegi-rating.pipe';
     // Register a Service Worker (optional)
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     AuthModule,
-
-    RouterModule,
-    MatCardModule,
-    MatIconModule,
-    FlexModule
+    RouterModule
   ],
-  declarations: [AppComponent, EventCardComponent, EstateCardComponent, AddressPipe, PegiRatingPipe],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   exports: [
-    EventCardComponent
   ],
   providers: [
     {

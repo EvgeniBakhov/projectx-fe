@@ -51,7 +51,7 @@ export class DashboardComponent implements OnInit {
     endDate: '11/07/2021, 11:30:36 AM',
     capacity: 1000,
     availableSeats: 1000,
-    ageRestrictions: AgeRestriction.EVERYONE,
+    ageRestrictions: AgeRestriction.ADULT,
     address: {
       region: 'Europe',
       country: 'Italy',
@@ -60,9 +60,9 @@ export class DashboardComponent implements OnInit {
     },
     organizer: { },
     type: EventType.FESTIVAL,
-    status: EventStatus.PLANNED,
+    status: EventStatus.RIGHT_NOW,
     pictures: [],
-    thumbnail: '.assets/mock/event-example.jpg'
+    thumbnail: './assets/mock/event-example-2.jpeg'
   };
 
   salesData$: Observable<ChartData>;

@@ -16,7 +16,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardService } from './dashboard.service';
 import { FurySharedModule } from '../../../@fury/fury-shared.module';
-import {AppModule} from '../../app.module';
+import {CardsModule} from '../../cards/cards.module';
 
 @NgModule({
     imports: [
@@ -37,7 +37,7 @@ import {AppModule} from '../../app.module';
         AdvancedPieChartWidgetModule,
         MapsWidgetModule,
         MarketWidgetModule,
-        AppModule
+        CardsModule
     ],
   declarations: [DashboardComponent],
   providers: [DashboardService]

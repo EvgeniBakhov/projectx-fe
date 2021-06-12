@@ -1,26 +1,30 @@
 <mat-card>
     <mat-card-header>
-        <div [style]="dotColor"></div>
         <mat-card-title>
+            <div class="{{dotColor}}"></div>
             {{event.name}}
         </mat-card-title>
         <mat-card-subtitle>
             {{event.startDate | date: 'MMM d, y, h:mm a'}}
         </mat-card-subtitle>
-        <div fxLayout="row" fxFlex="grow">
+        <div class="location" fxLayout="row" fxFlex="grow">
             <mat-icon>location_on</mat-icon>
-            {{event.address | address}}
+            <div>
+                {{event.address | address}}
+            </div>
         </div>
-        <img [src] = "event.thumbnail">
-        <mat-card-content>
-            {{event.description}}
-        </mat-card-content>
-        <mat-card-footer>
-            <img class="age-rating" [src]="event.ageRestrictions | pegiRating"/>
-            <mat-icon>event-seat</mat-icon>
-            <span>
+    </mat-card-header>
+    <mat-card-content>
+        <img [src]="event.thumbnail">
+        <div class="description">{{event.description}}</div>
+    </mat-card-content>
+    <mat-card-footer>
+        <img class="age-rating" [src]="event.ageRestrictions | pegiRating"/>
+        <span class="available-seats">
+            <mat-icon>event_seat</mat-icon>
+             <span>
                 {{event.availableSeats > 100 ? '100+' : event.availableSeats}}
             </span>
-        </mat-card-footer>
-    </mat-card-header>
+        </span>
+    </mat-card-footer>
 </mat-card>

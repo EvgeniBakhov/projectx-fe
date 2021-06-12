@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { fadeInUpAnimation } from '../../../../@fury/animations/fade-in-up.animation';
-import {AppService} from '../../../app.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
-  selector: 'fury-login',
+  selector: 'fest-finder',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   animations: [fadeInUpAnimation]
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
               private fb: FormBuilder,
               private cd: ChangeDetectorRef,
               private snackbar: MatSnackBar,
-              private app: AppService
+              private authService: AuthService
   ) {
   }
 
@@ -39,10 +39,15 @@ export class LoginComponent implements OnInit {
     this.snackbar.open('Lucky you! Looks like you didn\'t need a password or email address! For a real application we provide validators to prevent this. ;)', 'LOL THANKS', {
       duration: 10000
     });
+    const val = this.form.value;
 
-    this.app.authenticate(this.credentials, () => {
-      this.router.navigate(['/dashboard']);
-    });
+    if (val.email && val.password) {
+      this.authService.login(val.email, val.password).subscribe(error => {
+        this.snackbar.open('Incorrect username or password!')
+      }, () => {
+        this.router.navigate(['/dashboard']);
+      });
+    }
   }
 
   toggleVisibility() {
