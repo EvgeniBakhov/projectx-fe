@@ -17,9 +17,9 @@ export class AuthService {
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>('http://localhost:8080/login', {username, password}).pipe(
-            map(
-                response => {
+        return this.http.post<any>('http://localhost:8080/login', {username, password}, {observe: 'response'}).pipe(
+             map (
+                 (response: any) => {
                     sessionStorage.setItem(this.USERNAME, username);
                     const token = this.TOKEN_PREFIX + response.headers.get(this.AUTHORIZATION);
                     sessionStorage.setItem(this.TOKEN, token);

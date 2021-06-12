@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { fadeInUpAnimation } from '../../../../@fury/animations/fade-in-up.animation';
 import {AuthService} from '../../services/auth.service';
@@ -36,16 +36,13 @@ export class LoginComponent implements OnInit {
   }
 
   send() {
-    this.snackbar.open('Lucky you! Looks like you didn\'t need a password or email address! For a real application we provide validators to prevent this. ;)', 'LOL THANKS', {
-      duration: 10000
-    });
     const val = this.form.value;
 
     if (val.email && val.password) {
-      this.authService.login(val.email, val.password).subscribe(error => {
-        this.snackbar.open('Incorrect username or password!')
+      this.authService.login(val.email, val.password).subscribe(response => {
+          this.router.navigateByUrl('/');
       }, () => {
-        this.router.navigate(['/dashboard']);
+        this.snackbar.open('Incorrect username or password!');
       });
     }
   }
