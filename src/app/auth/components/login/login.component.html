@@ -8,9 +8,9 @@
     <div class="padding" fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
       <div fxFlex="auto" fxLayout="column">
         <mat-form-field fxFlex="grow">
-          <mat-label>E-Mail</mat-label>
+          <mat-label>Username</mat-label>
           <input matInput required formControlName="email">
-          <mat-error *ngIf="form.get('email').hasError('required')">We need an email address to log you in</mat-error>
+          <mat-error *ngIf="form.get('email').hasError('required')">We need an username to log you in</mat-error>
         </mat-form-field>
         <mat-form-field fxFlex="grow">
           <mat-label>Password</mat-label>
