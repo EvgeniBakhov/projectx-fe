@@ -18,6 +18,7 @@ import {FlexModule} from '@angular/flex-layout';
 import { AddressPipe } from './pipes/address.pipe';
 import { PegiRatingPipe } from './pipes/pegi-rating.pipe';
 import {CardsModule} from './cards/cards.module';
+import { EventDetailsComponent } from './pages/event-details/event-details.component';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import {CardsModule} from './cards/cards.module';
     AuthModule,
     RouterModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, EventDetailsComponent],
   bootstrap: [AppComponent],
   exports: [
   ],
