@@ -18,7 +18,7 @@ export class BasicAuthInterceptor implements HttpInterceptor {
         setHeaders: {
           Authorization: sessionStorage.getItem('token')
         }
-      })
+      });
     }
     return next.handle(request);
   }
