@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Event} from '../../model/event';
 import {EventStatus} from '../../model/enums/event-status';
 
@@ -12,12 +12,19 @@ export class EventCardComponent implements OnInit {
   @Input()
   event: Event;
 
+  @Output()
+  cardEmitter: EventEmitter<number> = new EventEmitter<number>();
+
   dotColor: string;
 
   constructor() { }
 
   ngOnInit(): void {
     this.dotColor = this.getDotColor();
+  }
+
+  onClick(): void {
+    this.cardEmitter.emit(this.event.id);
   }
 
   private getDotColor(): string {

@@ -30,12 +30,16 @@
 
 :host {
   width: 400px;
-  height: 600px;
+  height: 500px;
   margin: 8px;
 }
 
 mat-card {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   mat-card-header {
     justify-content: space-between;
 
@@ -62,6 +66,8 @@ mat-card {
     }
   }
   mat-card-content {
+    display: contents;
+
     img {
       height: 207px;
       width: 100%;
@@ -71,6 +77,22 @@ mat-card {
     .description {
       overflow: hidden;
       text-overflow: ellipsis;
+      height: 180px;
     }
   }
+}
+
+.fade {
+  position: relative;
+  height: 3.6em; /* exactly three lines */
+}
+.fade:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
 }

@@ -12,25 +12,31 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { ConfigPanelModule } from './config-panel/config-panel.module';
 import { FurySharedModule } from '../../@fury/fury-shared.module';
 import { NavigationModule } from './navigation/navigation.module';
+import { EventSearchComponent } from './event-search/event-search.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    MaterialModule,
-    LoadingIndicatorModule,
-    FurySharedModule,
+    imports: [
+        CommonModule,
+        RouterModule,
+        MaterialModule,
+        LoadingIndicatorModule,
+        FurySharedModule,
 
-    // Core
-    ToolbarModule,
-    QuickpanelModule,
-    SidenavModule,
-    FooterModule,
-    BackdropModule,
-    ConfigPanelModule,
-    NavigationModule
-  ],
-  declarations: [LayoutComponent]
+        // Core
+        ToolbarModule,
+        QuickpanelModule,
+        SidenavModule,
+        FooterModule,
+        BackdropModule,
+        ConfigPanelModule,
+        NavigationModule,
+        ReactiveFormsModule
+    ],
+    exports: [
+        EventSearchComponent
+    ],
+    declarations: [LayoutComponent, EventSearchComponent]
 })
 export class LayoutModule {
 }
