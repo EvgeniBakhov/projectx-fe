@@ -1,6 +1,5 @@
 <fury-loading-indicator></fury-loading-indicator>
 <fury-backdrop #backdrop="furyBackdrop"></fury-backdrop>
-<fury-config-panel-toggle (openConfig)="openConfigPanel()"></fury-config-panel-toggle>
 
 <div class="container" fxLayout="column">
   <ng-container *ngIf="(toolbarPosition$ | async) === 'above-fixed'">
@@ -57,11 +56,5 @@
   <fury-navigation *ngIf="topNavigation$ | async"
                    fxFlex="none"></fury-navigation>
   <!-- END NAVIGATION -->
-</ng-template>
-
-<ng-template #footer>
-  <!-- FOOTER -->
-  <fury-footer fxFlex="none"></fury-footer>
-  <!-- END FOOTER -->
 </ng-template>
 
