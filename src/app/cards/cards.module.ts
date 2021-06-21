@@ -6,13 +6,15 @@ import {MatCardModule} from '@angular/material/card';
 import {AddressPipe} from '../pipes/address.pipe';
 import {MatIconModule} from '@angular/material/icon';
 import {PegiRatingPipe} from '../pipes/pegi-rating.pipe';
+import { TopEventCardComponent } from './top-event-card/top-event-card.component';
 
 @NgModule({
   declarations: [
     EstateCardComponent,
     EventCardComponent,
     AddressPipe,
-    PegiRatingPipe
+    PegiRatingPipe,
+    TopEventCardComponent
   ],
   imports: [
     CommonModule, MatCardModule, MatIconModule

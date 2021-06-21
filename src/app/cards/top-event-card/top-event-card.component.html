@@ -1,0 +1,23 @@
+<mat-card routerLink="">
+    <mat-card-header>
+        <mat-card-title>
+            <mat-icon>whatshot</mat-icon>
+            {{event.name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{event.startDate | date: 'MMM d, y, h:mm a'}}
+        </mat-card-subtitle>
+        <div class="location" fxLayout="row" fxFlex="grow">
+            <mat-icon>location_on</mat-icon>
+            <div>
+                {{event.address | address}}
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <img [src]="event.thumbnail">
+    </mat-card-content>
+    <mat-card-footer>
+        <h1 color="primary">Learn more</h1>
+    </mat-card-footer>
+</mat-card>

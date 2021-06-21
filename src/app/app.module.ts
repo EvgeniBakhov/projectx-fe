@@ -19,6 +19,9 @@ import { AddressPipe } from './pipes/address.pipe';
 import { PegiRatingPipe } from './pipes/pegi-rating.pipe';
 import {CardsModule} from './cards/cards.module';
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
+import { EstateDetailsComponent } from './pages/estate-details/estate-details.component';
+import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
+import { MyReservationsComponent } from './pages/my-reservations/my-reservations.component';
 
 
 @NgModule({
@@ -42,7 +45,7 @@ import { EventDetailsComponent } from './pages/event-details/event-details.compo
     AuthModule,
     RouterModule
   ],
-  declarations: [AppComponent, EventDetailsComponent],
+  declarations: [AppComponent, EventDetailsComponent, EstateDetailsComponent, MyBookingsComponent, MyReservationsComponent],
   bootstrap: [AppComponent],
   exports: [
   ],

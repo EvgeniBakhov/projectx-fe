@@ -7,6 +7,8 @@ import { DashboardService } from './dashboard.service';
 import { FurySharedModule } from '../../../@fury/fury-shared.module';
 import {CardsModule} from '../../cards/cards.module';
 import {LayoutModule} from '../../layout/layout.module';
+import { EventsDashboardComponent } from './events-dashboard/events-dashboard.component';
+import { EstatesDashboardComponent } from './estates-dashboard/estates-dashboard.component';
 
 @NgModule({
     imports: [
@@ -17,7 +19,7 @@ import {LayoutModule} from '../../layout/layout.module';
         CardsModule,
         LayoutModule
     ],
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, EventsDashboardComponent, EstatesDashboardComponent],
   providers: [DashboardService]
 })
 export class DashboardModule {

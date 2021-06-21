@@ -1,0 +1,82 @@
+:host {
+  width: 400px;
+  height: 500px;
+  margin: 8px;
+}
+mat-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover{
+    margin-top:-10px;
+    transition: 0.3s all ease-in-out;
+  }
+
+  mat-card-header {
+    flex-direction: column;
+
+    .location {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+    mat-card-title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  mat-card-content {
+    display: contents;
+
+    img {
+      height: 207px;
+      width: 100%;
+      object-fit: contain;
+    }
+    .description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 180px;
+    }
+  }
+
+  mat-card-footer {
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+
+    .age-rating {
+      height: 30px;
+      width: auto;
+      border-radius: 3px;
+    }
+
+    .available-seats {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.fade {
+  position: relative;
+  height: 3.6em; /* exactly three lines */
+}
+.fade:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
