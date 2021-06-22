@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Estate} from '../../../model/estate';
 
 @Component({
   selector: 'fest-finder-estates-dashboard',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estates-dashboard.component.scss']
 })
 export class EstatesDashboardComponent implements OnInit {
+
+  estates: Estate[];
 
   constructor() { }
 

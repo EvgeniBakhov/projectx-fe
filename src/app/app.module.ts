@@ -22,30 +22,44 @@ import { EventDetailsComponent } from './pages/event-details/event-details.compo
 import { EstateDetailsComponent } from './pages/estate-details/estate-details.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
 import { MyReservationsComponent } from './pages/my-reservations/my-reservations.component';
+import {PageLayoutModule} from '../@fury/shared/page-layout/page-layout.module';
+import {ListModule} from '../@fury/shared/list/list.module';
+import {MatTableModule} from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {FuryCardModule} from '../@fury/shared/card/card.module';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 @NgModule({
-  imports: [
-    // Angular Core Module // Don't remove!
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
+    imports: [
+        // Angular Core Module // Don't remove!
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
 
-    // Fury Core Modules
-    AppRoutingModule,
+        // Fury Core Modules
+        AppRoutingModule,
 
-    // Layout Module (Sidenav, Toolbar, Quickpanel, Content)
-    LayoutModule,
+        // Layout Module (Sidenav, Toolbar, Quickpanel, Content)
+        LayoutModule,
 
-    // Displays Loading Bar when a Route Request or HTTP Request is pending
-    PendingInterceptorModule,
+        // Displays Loading Bar when a Route Request or HTTP Request is pending
+        PendingInterceptorModule,
 
-    // Register a Service Worker (optional)
-    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-    AuthModule,
-    RouterModule
-  ],
-  declarations: [AppComponent, EventDetailsComponent, EstateDetailsComponent, MyBookingsComponent, MyReservationsComponent],
+        // Register a Service Worker (optional)
+        // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+        AuthModule,
+        RouterModule,
+        PageLayoutModule,
+        ListModule,
+        MatTableModule,
+        MatMenuModule,
+        MatIconModule,
+        MatPaginatorModule,
+        FuryCardModule
+    ],
+  declarations: [AppComponent, EventDetailsComponent, EstateDetailsComponent, MyBookingsComponent, MyReservationsComponent, CarouselComponent],
   bootstrap: [AppComponent],
   exports: [
   ],

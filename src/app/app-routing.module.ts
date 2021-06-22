@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import {EventsDashboardComponent} from './pages/dashboard/events-dashboard/events-dashboard.component';
 import {EventDetailsComponent} from './pages/event-details/event-details.component';
-import {EstatesDashboardComponent} from './pages/dashboard/estates-dashboard/estates-dashboard.component';
 import {EstateDetailsComponent} from './pages/estate-details/estate-details.component';
 import {MyBookingsComponent} from './pages/my-bookings/my-bookings.component';
 import {MyReservationsComponent} from './pages/my-reservations/my-reservations.component';
@@ -28,14 +26,6 @@ const routes: Routes = [
   {
     path: 'event/:id',
     component: EventDetailsComponent
-  },
-  {
-    path: 'events',
-    component: EventsDashboardComponent
-  },
-  {
-    path: 'estates',
-    component: EstatesDashboardComponent
   },
   {
     path: 'estate/:id',
@@ -107,13 +97,9 @@ const routes: Routes = [
         loadChildren: () => import('./pages/editor/editor.module').then(m => m.EditorModule),
       },
       {
-        path: 'blank',
-        loadChildren: () => import('./pages/blank/blank.module').then(m => m.BlankModule),
-      },
-      {
-        path: 'level1/level2/level3/level4/level5',
-        loadChildren: () => import('./pages/level5/level5.module').then(m => m.Level5Module),
-      },
+        path: 'event/:id',
+        component: EventDetailsComponent
+      }
     ]
   }
 ];

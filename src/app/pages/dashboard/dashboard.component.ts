@@ -54,6 +54,9 @@ export class DashboardComponent implements OnInit {
     thumbnail: './assets/mock/event-example-2.jpeg'
   };
 
+  showEstatesDashboard: boolean;
+  showEventsDashboard: boolean;
+
   ngOnInit(): void {
   }
 }

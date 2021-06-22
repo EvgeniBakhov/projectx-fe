@@ -1,1 +1,16 @@
-<p>event-details works!</p>
+<fury-page-layout mode="card">
+    <fury-page-layout-content>
+        <fury-card>
+            <fury-card-header>
+                <fury-card-header-heading>Event</fury-card-header-heading>
+            </fury-card-header>
+
+            <fury-card-content>
+                <h1 class="margin-0 event-name">{{eventMock.name}}</h1>
+                <div class="carousel-container">
+                    <fest-finder-carousel [slides]="eventMock.pictures"></fest-finder-carousel>
+                </div>
+            </fury-card-content>
+        </fury-card>
+    </fury-page-layout-content>
+</fury-page-layout>

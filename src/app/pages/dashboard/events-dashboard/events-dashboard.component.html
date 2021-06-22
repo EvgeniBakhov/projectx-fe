@@ -1,10 +1,13 @@
-<fest-finder-event-search></fest-finder-event-search>
-<div *ngIf="events.length > 0">
-    <div *ngFor="let event in events">
-        <fest-finder-event-card [event]="event"></fest-finder-event-card>
+<fury-page class="dashboard" fxLayout.lt-sm="row">
+    <div>
+        <fest-finder-event-search></fest-finder-event-search>
     </div>
-</div>
-<div *ngIf="events.length === 0">
-    <div class="subheading-2 screen-center">There is no events matching criteria. Try another search.</div>
-</div>
-
+    <div *ngIf="events.length > 0">
+        <div class="card-container" fxLayoutGap="8px" *ngFor="let event in events">
+            <fest-finder-event-card [event]="event"></fest-finder-event-card>
+        </div>
+    </div>
+    <div *ngIf="events.length === 0">
+        <div class="subheading-2 screen-center">There is no events matching criteria. Try another search.</div>
+    </div>
+</fury-page>

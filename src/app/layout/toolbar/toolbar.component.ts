@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { ThemeService } from '../../../@fury/services/theme.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'fury-toolbar',
@@ -18,10 +19,16 @@ export class ToolbarComponent implements OnInit {
 
   topNavigation$ = this.themeService.config$.pipe(map(config => config.navigation === 'top'));
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private router: Router) {
   }
 
   ngOnInit() { }
 
+  goToEvents(): void {
+    this.router.navigate(['/events']);
+  }
 
+  goToEstates(): void {
+    this.router.navigate(['/estates']);
+  }
 }
