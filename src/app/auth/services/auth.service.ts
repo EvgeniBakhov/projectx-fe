@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../model/user';
 import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -36,5 +37,10 @@ export class AuthService {
 
     logOut() {
         sessionStorage.removeItem(this.USERNAME);
+        sessionStorage.removeItem(this.TOKEN);
+    }
+
+    getAuthenticatedUser(): Observable<User> {
+        return this.http.get<User>('localhost:8080/user/authenticated');
     }
 }

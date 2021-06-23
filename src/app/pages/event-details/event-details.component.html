@@ -2,13 +2,25 @@
     <fury-page-layout-content>
         <fury-card>
             <fury-card-header>
-                <fury-card-header-heading>Event</fury-card-header-heading>
             </fury-card-header>
 
             <fury-card-content>
-                <h1 class="margin-0 event-name">{{eventMock.name}}</h1>
+                <h1 class="margin-0 event-name">{{event.name}}</h1>
                 <div class="carousel-container">
-                    <fest-finder-carousel [slides]="eventMock.pictures"></fest-finder-carousel>
+                    <fest-finder-carousel [slides]="event.pictures"></fest-finder-carousel>
+                </div>
+                <div class="event-data">
+                    <div class="data-container">
+                        <div class="user-data">
+                            <img>
+                        </div>
+                        <div class="event-data-container"></div>
+                    </div>
+                    <div class="data-container">
+                        <div class="maps-container" fxLayoutGap="8px">
+                        </div>
+                        <mat-card>{{event.description}}</mat-card>
+                    </div>
                 </div>
             </fury-card-content>
         </fury-card>

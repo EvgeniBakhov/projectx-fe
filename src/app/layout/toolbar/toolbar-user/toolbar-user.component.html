@@ -10,20 +10,20 @@
   <div class="dropdown" [class.open]="isOpen">
     <div class="content">
       <div class="list">
-        <div class="list-item" matRipple>
+        <div class="list-item" matRipple (click)="goToProfile()">
           <mat-icon class="list-item-icon">portrait</mat-icon>
           <span>Profile</span>
         </div>
-        <div class="list-item" matRipple>
+        <div class="list-item" matRipple (click)="goToMyBookings()">
           <mat-icon class="list-item-icon">book</mat-icon>
           <span>My Bookings</span>
         </div>
-        <div class="list-item" matRipple>
+        <div class="list-item" matRipple (click)="goToMyReservations()">
           <mat-icon class="list-item-icon">event_available</mat-icon>
           <span>My Reservations</span>
         </div>
         <mat-divider></mat-divider>
-        <div class="list-item" matRipple [routerLink]="['/login']">
+        <div class="list-item" matRipple (click)="logout()">
           <mat-icon class="list-item-icon">exit_to_app</mat-icon>
           <span>Logout</span>
         </div>

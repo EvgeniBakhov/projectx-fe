@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Estate} from '../../model/estate';
 import {EstateType} from '../../model/enums/estate-type';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'fest-finder-estate-card',
@@ -10,7 +11,7 @@ import {EstateType} from '../../model/enums/estate-type';
 export class EstateCardComponent implements OnInit {
 
   estateMock: Estate = {
-    id: 1234,
+    id: 1,
     address: {id: 12, region: 'Europe', country: 'Italy', city: 'Rome', street: 'Unnamed road 150'},
     numOfBedrooms: 2,
     area: 134.34,
@@ -25,10 +26,14 @@ export class EstateCardComponent implements OnInit {
   @Input()
   estate: Estate;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.estate = this.estateMock;
+  }
+
+  estateClick(): void {
+    this.router.navigate(['./estate/' + this.estate.id]);
   }
 
 }

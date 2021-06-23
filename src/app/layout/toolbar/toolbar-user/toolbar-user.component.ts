@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../../../auth/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'fury-toolbar-user',
@@ -9,7 +11,7 @@ export class ToolbarUserComponent implements OnInit {
 
   isOpen: boolean;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -22,4 +24,20 @@ export class ToolbarUserComponent implements OnInit {
     this.isOpen = false;
   }
 
+  goToProfile(): void {
+    return;
+  }
+
+  goToMyBookings(): void {
+    this.router.navigate(['my-bookings']);
+  }
+
+  goToMyReservations(): void {
+    this.router.navigate(['/my-reservations']);
+  }
+
+  logout(): void {
+    this.authService.logOut();
+    this.router.navigate(['/login']);
+  }
 }

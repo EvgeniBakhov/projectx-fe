@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AgeRestriction} from '../../../model/enums/age-restriction';
-import {EventType} from '../../../model/enums/event-type';
-import {EventStatus} from '../../../model/enums/event-status';
-import {Event} from '../../../model/event';
+import {AgeRestriction} from '../../model/enums/age-restriction';
+import {EventType} from '../../model/enums/event-type';
+import {EventStatus} from '../../model/enums/event-status';
+import {Event} from '../../model/event';
 
 @Component({
   selector: 'fest-finder-events-dashboard',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'fury-google-maps',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./google-maps.component.scss']
 })
 export class GoogleMapsComponent implements OnInit {
+
+  @Input()
+  coordinates: {
+    lat: number,
+    lng: number
+  };
 
   options: google.maps.MapOptions = {
     center: {

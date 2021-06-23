@@ -12,6 +12,7 @@ fury-page-layout {
       display: flex;
       height: 100%;
       width: 100%;
+      background-color: lightgray;
 
       fury-card-content {
         display: flex;
@@ -35,9 +36,35 @@ fury-page-layout {
           }
         }
 
-        .event-info-container {
+        .event-data {
           display: flex;
           flex-direction: column;
+
+          .data-container {
+            display: flex;
+            flex-direction: row;
+
+            .user-data {
+              width: 40%;
+              border: 1px solid gray;
+
+            }
+
+            .event-data-container {
+              border: 1px solid gray;
+
+            }
+            .maps-container {
+              width: 40%;
+            }
+            .description-container {
+              width: 60%;
+              border: 1px solid;
+              padding: 4px;
+              border-color: #999999;
+              border-radius: 5px;
+            }
+          }
         }
       }
     }

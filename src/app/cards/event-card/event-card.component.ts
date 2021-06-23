@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Event} from '../../model/event';
 import {EventStatus} from '../../model/enums/event-status';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'fest-finder-event-card',
@@ -12,19 +13,12 @@ export class EventCardComponent implements OnInit {
   @Input()
   event: Event;
 
-  @Output()
-  cardEmitter: EventEmitter<number> = new EventEmitter<number>();
-
   dotColor: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.dotColor = this.getDotColor();
-  }
-
-  onClick(): void {
-    this.cardEmitter.emit(this.event.id);
   }
 
   private getDotColor(): string {
@@ -34,5 +28,9 @@ export class EventCardComponent implements OnInit {
       case EventStatus.POSTPONED: return 'orangedot';
       case EventStatus.RIGHT_NOW: return 'greendot';
     }
+  }
+
+  eventClick(): void {
+    this.router.navigate(['./event/' + this.event.id]);
   }
 }

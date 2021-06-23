@@ -29,6 +29,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {FuryCardModule} from '../@fury/shared/card/card.module';
 import { CarouselComponent } from './carousel/carousel.component';
+import {GoogleMapsModule} from './pages/maps/google-maps/google-maps.module';
+import {EstatesDashboardComponent} from './pages/estates-dashboard/estates-dashboard.component';
+import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboard.component';
 
 
 @NgModule({
@@ -57,9 +60,20 @@ import { CarouselComponent } from './carousel/carousel.component';
         MatMenuModule,
         MatIconModule,
         MatPaginatorModule,
-        FuryCardModule
+        FuryCardModule,
+        GoogleMapsModule,
+        FlexModule,
+        MatCardModule
     ],
-  declarations: [AppComponent, EventDetailsComponent, EstateDetailsComponent, MyBookingsComponent, MyReservationsComponent, CarouselComponent],
+  declarations: [
+      AppComponent,
+      EventDetailsComponent,
+      EstateDetailsComponent,
+      MyBookingsComponent,
+      MyReservationsComponent,
+      CarouselComponent,
+      EventsDashboardComponent,
+      EstatesDashboardComponent],
   bootstrap: [AppComponent],
   exports: [
   ],

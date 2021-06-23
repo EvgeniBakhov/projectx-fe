@@ -39,6 +39,7 @@ mat-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 
   mat-card-header {
     justify-content: space-between;
