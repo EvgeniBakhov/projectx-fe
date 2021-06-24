@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Needed for Touch functionality of Material Components
@@ -37,6 +37,8 @@ import { ReservationDialogComponent } from './dialogs/reservation-dialog/reserva
 import {LoadingIndicatorModule} from '../@fury/shared/loading-indicator/loading-indicator.module';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import {QRCodeModule} from 'angularx-qrcode';
+import {BasicAuthInterceptor} from './auth/interceptors/basic-auth.interceptor';
 
 
 @NgModule({
@@ -73,7 +75,8 @@ import {MatButtonModule} from '@angular/material/button';
         PageModule,
         LoadingIndicatorModule,
         MatDialogModule,
-        MatButtonModule
+        MatButtonModule,
+        QRCodeModule
     ],
   declarations: [
       AppComponent,
@@ -89,6 +92,11 @@ import {MatButtonModule} from '@angular/material/button';
   exports: [
   ],
   providers: [
+      {
+          provide: HTTP_INTERCEPTORS,
+          useClass: BasicAuthInterceptor,
+          multi: true
+      },
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {

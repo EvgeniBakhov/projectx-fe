@@ -3,18 +3,18 @@
     <div class="reservation-container">
         <img [src]="event.thumbnail">
         <div class="reservation-info">
-            <div class="names"></div>
-            <div class="event-name"></div>
-            <div class="start-time">
+            <div class="names">{{user.firstName}} {{user.lastName}}</div>
+            <div class="title event-name">{{event.name}}</div>
+            <div class="start-time mat-subheading-1">
                 Start time:
-                <div class="time">{{event.startDate | date: 'yyyy-MMM-dd hh:mm'}}</div>
+                <div class="time">{{event.startDate | date: 'MMM dd yyyy hh:mm'}}</div>
             </div>
             <div class="pictures">
-                <img src="assets/img/icons/svg/reservation-stamp.svg">
-                <div>
-                    <div class="subheading">QR code for your reservation:</div>
-                    <div></div>
-                    <div class="subheading">Enjoy your time!</div>
+                <img class="stamp" src="assets/img/icons/svg/reservation-stamp.svg">
+                <div class="qr-code">
+                    <div>QR code for your reservation:</div>
+                    <qrcode [qrdata]="reservationUrl" [width]="80" [errorCorrectionLevel]="'M'"></qrcode>
+                    <div>Enjoy your time!</div>
                 </div>
             </div>
         </div>

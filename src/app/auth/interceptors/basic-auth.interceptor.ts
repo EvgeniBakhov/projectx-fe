@@ -12,7 +12,10 @@ export class BasicAuthInterceptor implements HttpInterceptor {
 
   constructor() {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (request.url === 'http://api.ipify.org/?format=json') {
+      return next.handle(request);
+    }
     if (sessionStorage.getItem('username') && sessionStorage.getItem('token')) {
       request = request.clone({
         setHeaders: {

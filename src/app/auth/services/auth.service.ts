@@ -41,6 +41,6 @@ export class AuthService {
     }
 
     getAuthenticatedUser(): Observable<User> {
-        return this.http.get<User>('localhost:8080/user/authenticated');
+        return this.http.get<User>('http://localhost:8080/user/authenticated');
     }
 }
