@@ -24,8 +24,7 @@ const routes: Routes = [
     children: [
       {
         path: 'event/:id',
-        component: EventDetailsComponent,
-        canActivate: [AuthGuard]
+        component: EventDetailsComponent
       },
       {
         path: 'estate/:id',

@@ -6,7 +6,6 @@ export enum EventType {
     SPORTS_ACTIVITY,
     FESTIVAL,
     CULTURE_ACTIVITY,
-    CONTEST,
     SHOW,
     OTHER,
     MEETING,

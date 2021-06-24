@@ -1,0 +1,72 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .data-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px;
+
+    .event-date {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 50%;
+    }
+
+    .event-seats {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 50%;
+    }
+
+    .event-status {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .event-location {
+      display: flex;
+      width: 50%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .place-type {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 50%;
+    }
+
+    .event-type {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 50%;
+      justify-content: flex-end;
+    }
+
+    img {
+      display: flex;
+      align-items: flex-end;
+      width: 24px;
+      height: 24px;
+      padding: 4px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+.material-icons-outlined {
+  padding: 4px;
+}

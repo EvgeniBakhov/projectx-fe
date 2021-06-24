@@ -1,0 +1,42 @@
+<mat-card>
+    <div class="data-container">
+        <div class="event-date">
+            <span class="material-icons-outlined">schedule</span>
+            <span>
+                <div class="subheading-2">{{event.startDate | date: 'yyyy-MM-dd hh:mm'}}</div>
+                <div>{{event.endDate | date: 'yyyy-MM-dd hh:mm'}}</div>
+            </span>
+        </div>
+        <div class="event-status">
+            <mat-chip-list>
+                <mat-chip>{{chipText}}</mat-chip>
+            </mat-chip-list>
+            <img [src]="event.ageRestrictions | pegiRating">
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="event-seats">
+            <span class="material-icons-outlined">chair</span>
+            {{event.availableSeats}}/{{event.capacity}}
+        </div>
+        <div class="event-location">
+            <mat-icon>location_on</mat-icon>
+            {{event.address | address}}
+        </div>
+    </div>
+    <div class="data-container last-data-container">
+        <div class="place-type">
+            <span class="material-icons-outlined">{{placeTypeIcon}}</span>
+            {{placeTypeText}}
+        </div>
+        <div class="event-type">
+            <span class="material-icons-outlined">{{eventTypeIcon}}</span>
+            {{eventTypeText}}
+        </div>
+    </div>
+    <div class="button-container">
+        <button type="button" mat-raised-button color="primary" (click)="openReservationDialog()">
+            RESERVE
+        </button>
+    </div>
+</mat-card>

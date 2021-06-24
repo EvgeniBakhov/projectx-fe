@@ -9,16 +9,16 @@
                 <div class="carousel-container">
                     <fest-finder-carousel [slides]="event.pictures"></fest-finder-carousel>
                 </div>
-                <div class="event-data">
-                    <div class="data-container">
+                <div class="event-data" fxLayout.lt-md="column" fxLayout.gt-md="row">
+                    <div class="data-container" fxLayout.lt-sm="column">
                         <div class="user-data">
-                            <img>
+                           <fest-finder-user-info-card [user]="event.organizer"></fest-finder-user-info-card>
                         </div>
-                        <div class="event-data-container"></div>
+                        <div class="event-data-container">
+                            <fest-finder-event-data-card [event]="event"></fest-finder-event-data-card>
+                        </div>
                     </div>
                     <div class="data-container">
-                        <div class="maps-container" fxLayoutGap="8px">
-                        </div>
                         <mat-card>{{event.description}}</mat-card>
                     </div>
                 </div>

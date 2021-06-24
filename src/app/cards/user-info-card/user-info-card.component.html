@@ -1,0 +1,12 @@
+<mat-card>
+    <img class="avatar user-picture" [src]="user.picture">
+    <div class="names title">{{user.firstName}} {{user.lastName}}</div>
+    <div class="phone">
+        <span class="material-icons-outlined call-icon">call</span>
+        {{user.phone}}
+    </div>
+    <div class="email">
+        <span class="material-icons-outlined mail-icon">mail</span>
+        {{user.email}}
+    </div>
+</mat-card>

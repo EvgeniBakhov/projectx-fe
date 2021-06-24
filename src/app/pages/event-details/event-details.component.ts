@@ -4,6 +4,7 @@ import {EventType} from '../../model/enums/event-type';
 import {EventStatus} from '../../model/enums/event-status';
 import {Event} from '../../model/event';
 import {PlaceType} from '../../model/enums/place-type';
+import {UserType} from '../../model/enums/user-type';
 
 @Component({
   selector: 'fest-finder-event-details',
@@ -26,16 +27,34 @@ export class EventDetailsComponent implements OnInit {
     availableSeats: 1000,
     ageRestrictions: AgeRestriction.ADULT,
     address: {
+      id: 13,
       region: 'Europe',
       country: 'Italy',
       city: 'Milan',
       street: 'Unnamed road 101'
     },
-    organizer: { },
-    placeType: PlaceType.OPEN_AIR,
+    organizer: {
+      id: 1,
+      username: 'john012',
+      firstName: 'Dmitry',
+      lastName: 'Gordon',
+      age: 25,
+      email: 'barak_obama@gmail.com',
+      phone: '8-800-555-35-35',
+      type: UserType.ORGANIZER,
+      picture: 'assets/mock/user-mock/download.jpg',
+      address: {
+        id: 123,
+        region: 'Europe',
+        country: 'United Kingdom',
+        city: 'London',
+        street: 'Baker street 291'
+      }
+    },
+    placeType: PlaceType.ONLINE,
     type: EventType.FESTIVAL,
     status: EventStatus.RIGHT_NOW,
-    pictures: ['./assets/mock/event_pictures/1.jpeg', './assets/mock/event_pictures/2.jpeg', './assets/mock/event_pictures/3.jpeg'],
+    pictures: ['./assets/mock/event_pictures/1.jpeg', './assets/mock/event_pictures/2.jpeg', './assets/mock/event_pictures/3.jpeg', './assets/mock/event_pictures/4.jpg'],
     thumbnail: './assets/mock/event-example-2.jpeg'
   };
 

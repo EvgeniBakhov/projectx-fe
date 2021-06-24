@@ -1,0 +1,35 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  .user-picture {
+    height: 60px;
+    width: 60px;
+    align-self: center;
+  }
+
+  .names {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+  }
+
+  .email {
+    display: flex;
+    align-items: center;
+
+    .mail-icon {
+      padding: 4px;
+    }
+  }
+  .phone {
+    display: flex;
+    align-items: center;
+
+    .call-icon {
+      padding: 4px;
+    }
+  }
+}

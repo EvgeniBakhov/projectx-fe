@@ -7,6 +7,11 @@ import {AddressPipe} from '../pipes/address.pipe';
 import {MatIconModule} from '@angular/material/icon';
 import {PegiRatingPipe} from '../pipes/pegi-rating.pipe';
 import { TopEventCardComponent } from './top-event-card/top-event-card.component';
+import { UserInfoCardComponent } from './user-info-card/user-info-card.component';
+import { EventDataCardComponent } from './event-data-card/event-data-card.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonModule} from '@angular/material/button';
+import {SharedModule} from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,13 @@ import { TopEventCardComponent } from './top-event-card/top-event-card.component
     EventCardComponent,
     AddressPipe,
     PegiRatingPipe,
-    TopEventCardComponent
+    TopEventCardComponent,
+    UserInfoCardComponent,
+    EventDataCardComponent
   ],
   imports: [
-    CommonModule, MatCardModule, MatIconModule
+    CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule
   ],
-  exports: [ EstateCardComponent, EventCardComponent]
+    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent]
 })
 export class CardsModule { }

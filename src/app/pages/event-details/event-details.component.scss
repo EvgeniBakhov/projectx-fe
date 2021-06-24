@@ -12,7 +12,6 @@ fury-page-layout {
       display: flex;
       height: 100%;
       width: 100%;
-      background-color: lightgray;
 
       fury-card-content {
         display: flex;
@@ -27,7 +26,7 @@ fury-page-layout {
           display: block;
           height: 500px;
           width: 100%;
-          padding: 2em;
+          padding: 16px 4px 16px 4px;
 
           fest-finder-carousel {
             display: flex;
@@ -38,31 +37,29 @@ fury-page-layout {
 
         .event-data {
           display: flex;
-          flex-direction: column;
 
           .data-container {
+            width: 100%;
             display: flex;
             flex-direction: row;
+            padding: 4px;
 
             .user-data {
-              width: 40%;
-              border: 1px solid gray;
-
+              min-width: fit-content;
+              padding: 4px;
             }
 
             .event-data-container {
-              border: 1px solid gray;
+              width: 100%;
+              padding: 4px;
 
             }
-            .maps-container {
-              width: 40%;
+            mat-card {
+              height: 100%;
             }
             .description-container {
-              width: 60%;
-              border: 1px solid;
               padding: 4px;
-              border-color: #999999;
-              border-radius: 5px;
+
             }
           }
         }

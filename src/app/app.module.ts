@@ -32,6 +32,11 @@ import { CarouselComponent } from './carousel/carousel.component';
 import {GoogleMapsModule} from './pages/maps/google-maps/google-maps.module';
 import {EstatesDashboardComponent} from './pages/estates-dashboard/estates-dashboard.component';
 import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboard.component';
+import {PageModule} from '../@fury/shared/page/page.module';
+import { ReservationDialogComponent } from './dialogs/reservation-dialog/reservation-dialog.component';
+import {LoadingIndicatorModule} from '../@fury/shared/loading-indicator/loading-indicator.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -63,7 +68,12 @@ import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboar
         FuryCardModule,
         GoogleMapsModule,
         FlexModule,
-        MatCardModule
+        MatCardModule,
+        CardsModule,
+        PageModule,
+        LoadingIndicatorModule,
+        MatDialogModule,
+        MatButtonModule
     ],
   declarations: [
       AppComponent,
@@ -73,7 +83,8 @@ import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboar
       MyReservationsComponent,
       CarouselComponent,
       EventsDashboardComponent,
-      EstatesDashboardComponent],
+      EstatesDashboardComponent,
+      ReservationDialogComponent],
   bootstrap: [AppComponent],
   exports: [
   ],
