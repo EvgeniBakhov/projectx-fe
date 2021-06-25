@@ -1,10 +1,8 @@
-<fury-page class="dashboard" fxLayout.lt-sm="row">
-      <div>
-            <fest-finder-event-search class="sm-w-100"></fest-finder-event-search>
-      </div>
-      <div class="card-container" fxLayoutGap="8px">
-            <fest-finder-estate-card></fest-finder-estate-card>
+<fury-page class="dashboard">
+      <fest-finder-dashboard-banner></fest-finder-dashboard-banner>
+      <div class="dashboard-content">
+            <div class="top-event-container"></div>
+            <div class="event-suggestion-container" *ngFor="let event of eve">
+            </div>
       </div>
 </fury-page>
-
-

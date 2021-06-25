@@ -13,6 +13,7 @@ export class EstatesDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.estates = [];
   }
 
 }

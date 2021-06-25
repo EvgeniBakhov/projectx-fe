@@ -1,10 +1,13 @@
-<fest-finder-event-search></fest-finder-event-search>
-<div *ngIf="estates.length > 0">
-    <div *ngFor="let estate in estates">
-        <fest-finder-estate-card [estate]="estate"></fest-finder-estate-card>
+<fury-page class="dashboard" fxLayout.lt-sm="row">
+    <fest-finder-event-search class="sm-w-100"></fest-finder-event-search>
+    <div *ngIf="estates.length > 0">
+        <div *ngFor="let estate in estates">
+            <fest-finder-estate-card class="card-container" fxLayoutGap="8px"
+                                     [estate]="estate"></fest-finder-estate-card>
+        </div>
     </div>
-</div>
-<div *ngIf="estates.length === 0">
-    <div class="subheading-2 screen-center">There is no estates matching criteria. Try another search.</div>
-</div>
+    <div *ngIf="estates.length === 0">
+        <div class="subheading-2 screen-center">There is no estates matching criteria. Try another search.</div>
+    </div>
+</fury-page>
 

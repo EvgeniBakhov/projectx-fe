@@ -12,6 +12,8 @@ import { EventDataCardComponent } from './event-data-card/event-data-card.compon
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
 import {SharedModule} from '../shared/shared.module';
+import { EventSuggestionCardComponent } from './event-suggestion-card/event-suggestion-card.component';
+import { DashboardBannerComponent } from './dashboard-banner/dashboard-banner.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import {SharedModule} from '../shared/shared.module';
     PegiRatingPipe,
     TopEventCardComponent,
     UserInfoCardComponent,
-    EventDataCardComponent
+    EventDataCardComponent,
+    EventSuggestionCardComponent,
+    DashboardBannerComponent
   ],
   imports: [
     CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule
   ],
-    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent]
+    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent]
 })
 export class CardsModule { }

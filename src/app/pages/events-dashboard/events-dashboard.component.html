@@ -1,10 +1,8 @@
 <fury-page class="dashboard" fxLayout.lt-sm="row">
-    <div>
-        <fest-finder-event-search></fest-finder-event-search>
-    </div>
+    <fest-finder-event-search class="sm-w-100"></fest-finder-event-search>
     <div *ngIf="events.length > 0">
-        <div class="card-container" fxLayoutGap="8px" *ngFor="let event in events">
-            <fest-finder-event-card [event]="event"></fest-finder-event-card>
+        <div *ngFor="let event in events">
+            <fest-finder-event-card class="card-container" fxLayoutGap="8px" [event]="event"></fest-finder-event-card>
         </div>
     </div>
     <div *ngIf="events.length === 0">
