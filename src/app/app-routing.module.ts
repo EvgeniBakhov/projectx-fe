@@ -8,6 +8,7 @@ import {MyReservationsComponent} from './pages/my-reservations/my-reservations.c
 import {AuthGuard} from './auth/guards/auth.guard';
 import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboard.component';
 import {EstatesDashboardComponent} from './pages/estates-dashboard/estates-dashboard.component';
+import {NotFoundPageComponent} from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/authentication/register/register.module').then(m => m.RegisterModule),
+  },
+  {
+    path: '404',
+    component: NotFoundPageComponent
   },
   {
     path: '',
@@ -58,6 +63,10 @@ const routes: Routes = [
         canActivate: [AuthGuard]
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: '/404'
   }
 ];
 

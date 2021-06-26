@@ -1,1 +1,24 @@
 
+mat-card {
+  display: flex;
+  flex-direction: column;
+
+  mat-card-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  mat-card-footer {
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      color: #C50B5B;
+      justify-content: flex-end;
+      padding: 4px;
+    }
+  }
+}

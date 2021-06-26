@@ -39,6 +39,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {QRCodeModule} from 'angularx-qrcode';
 import {BasicAuthInterceptor} from './auth/interceptors/basic-auth.interceptor';
+import {BreadcrumbsModule} from '../@fury/shared/breadcrumbs/breadcrumbs.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSortModule} from '@angular/material/sort';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 
 @NgModule({
@@ -76,7 +80,10 @@ import {BasicAuthInterceptor} from './auth/interceptors/basic-auth.interceptor';
         LoadingIndicatorModule,
         MatDialogModule,
         MatButtonModule,
-        QRCodeModule
+        QRCodeModule,
+        BreadcrumbsModule,
+        MatCheckboxModule,
+        MatSortModule
     ],
   declarations: [
       AppComponent,
@@ -87,7 +94,8 @@ import {BasicAuthInterceptor} from './auth/interceptors/basic-auth.interceptor';
       CarouselComponent,
       EventsDashboardComponent,
       EstatesDashboardComponent,
-      ReservationDialogComponent],
+      ReservationDialogComponent,
+      NotFoundPageComponent],
   bootstrap: [AppComponent],
   exports: [
   ],

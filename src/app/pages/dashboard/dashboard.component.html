@@ -1,8 +1,17 @@
 <fury-page class="dashboard">
       <fest-finder-dashboard-banner></fest-finder-dashboard-banner>
       <div class="dashboard-content">
-            <div class="top-event-container"></div>
-            <div class="event-suggestion-container" *ngFor="let event of eve">
+            <div class="top-event-container">
+                  <fest-finder-top-event-card [event]="topEvent"></fest-finder-top-event-card>
+            </div>
+            <div class="event-suggestion-container">
+                  <div class="suggested-events" *ngIf="eventSuggestions.length > 0"></div>
+                        <div *ngFor="let event of eventSuggestions">
+                              <fest-finder-event-suggestion-card [event]="event"></fest-finder-event-suggestion-card>
+                        </div>
+                  <div class="empty-suggested-events" *ngIf="eventSuggestions.length === 0">
+                        There is no suggested events for your location:(
+                  </div>
             </div>
       </div>
 </fury-page>

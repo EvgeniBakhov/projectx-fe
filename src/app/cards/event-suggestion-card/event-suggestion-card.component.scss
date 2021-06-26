@@ -1,0 +1,12 @@
+mat-card {
+  mat-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    img {
+      height: 153px;
+      width: 272px;
+    }
+  }
+}

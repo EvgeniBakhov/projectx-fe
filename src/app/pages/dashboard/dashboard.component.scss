@@ -9,4 +9,22 @@
     display: flex;
     height: 30%;
   }
+  .dashboard-content {
+    display: flex;
+    flex-direction: row;
+
+    .top-event-container {
+      display: flex;
+      width: 50%;
+
+      fest-finder-top-event-card {
+        width: 100%;
+      }
+    }
+
+    .event-suggestion-container {
+      width: 50%;
+    }
+  }
+
 }

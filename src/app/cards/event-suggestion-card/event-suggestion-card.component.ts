@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Event} from '../../model/event';
 
 @Component({
   selector: 'fest-finder-event-suggestion-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-suggestion-card.component.scss']
 })
 export class EventSuggestionCardComponent implements OnInit {
+  @Input()
+  event: Event;
 
   constructor() { }
 

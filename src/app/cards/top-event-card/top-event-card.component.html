@@ -2,22 +2,21 @@
     <mat-card-header>
         <mat-card-title>
             <mat-icon>whatshot</mat-icon>
-            {{event.name}}
+            This week top event
         </mat-card-title>
         <mat-card-subtitle>
-            {{event.startDate | date: 'MMM d, y, h:mm a'}}
-        </mat-card-subtitle>
-        <div class="location" fxLayout="row" fxFlex="grow">
-            <mat-icon>location_on</mat-icon>
             <div>
-                {{event.address | address}}
+<!--                {{event.startDate | date: 'MMM d, y, h:mm a'}}-->
             </div>
-        </div>
+            <div class="subheading-1">
+<!--                {{event.name}}-->
+            </div>
+        </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <img [src]="event.thumbnail">
+<!--        <img [src]="event.thumbnail">-->
     </mat-card-content>
     <mat-card-footer>
-        <h1 color="primary">Learn more</h1>
+        <div (click)="learnMoreClick()">Learn more</div>
     </mat-card-footer>
 </mat-card>

@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Event} from '../../model/event';
 import {EventStatus} from '../../model/enums/event-status';
 import {Router} from '@angular/router';
+import {EventService} from '../../service/event.service';
 
 @Component({
   selector: 'fest-finder-event-card',
@@ -14,11 +15,26 @@ export class EventCardComponent implements OnInit {
   event: Event;
 
   dotColor: string;
+  thumbnail: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private eventService: EventService) { }
 
   ngOnInit(): void {
     this.dotColor = this.getDotColor();
+    this.eventService.getThumbnail(this.event.id).subscribe(data => {
+      this.createImageFromBlob(data);
+    });
+  }
+
+  private createImageFromBlob(data: Blob) {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      this.thumbnail = reader.result;
+    }, false);
+
+    if (data) {
+      reader.readAsDataURL(data);
+    }
   }
 
   private getDotColor(): string {

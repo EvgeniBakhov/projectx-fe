@@ -30,6 +30,6 @@ import { DashboardBannerComponent } from './dashboard-banner/dashboard-banner.co
   imports: [
     CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule
   ],
-    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent]
+  exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent, EventSuggestionCardComponent, TopEventCardComponent]
 })
 export class CardsModule { }
