@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {Form, FormControl} from '@angular/forms';
-import {map, startWith} from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {EventService} from '../../service/event.service';
+import {map, startWith} from 'rxjs/operators';
+import {EstateService} from '../../service/estate.service';
 
 @Component({
-  selector: 'fest-finder-event-search',
-  templateUrl: './event-search.component.html',
-  styleUrls: ['./event-search.component.scss']
+  selector: 'fest-finder-estate-search',
+  templateUrl: './estate-search.component.html',
+  styleUrls: ['./estate-search.component.scss']
 })
-export class EventSearchComponent implements OnInit {
+export class EstateSearchComponent implements OnInit {
 
   cities: string[];
   ctrlCities: FormControl;
   filteredCities: Observable<any>;
 
-  constructor(private eventService: EventService){ }
+  constructor(private estateService: EstateService) { }
 
   ngOnInit() {
     this.ctrlCities = new FormControl();
-
-    this.eventService.getCities().subscribe(cities => {
+    this.estateService.getCities().subscribe(cities => {
       this.cities = cities;
       this.filteredCities = this.ctrlCities.valueChanges.pipe(startWith(''),
           map(city => city ? this.filterCities(city) : this.cities.slice()));

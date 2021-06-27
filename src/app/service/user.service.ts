@@ -27,4 +27,8 @@ export class UserService {
   uploadPicture(imageData: FormData): Observable<any> {
     return this.http.post(`${this.BASE_URL}/picture`, imageData);
   }
+
+  updateUserDetails(userDetails: User): Observable<User> {
+    return this.http.put<User>(`${this.BASE_URL}`, userDetails);
+  }
 }

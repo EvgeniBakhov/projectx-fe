@@ -5,6 +5,8 @@ import {UserService} from '../../service/user.service';
 import {ActivatedRoute} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {UserPicturePickerComponent} from '../../dialogs/user-picture-picker/user-picture-picker.component';
+import {UserEditDialogComponent} from '../../dialogs/user-edit-dialog/user-edit-dialog.component';
+import {BookingDialogComponent} from '../../dialogs/booking-dialog/booking-dialog.component';
 
 @Component({
   selector: 'fest-finder-user-profile',
@@ -18,7 +20,10 @@ export class UserProfileComponent implements OnInit {
   editPermitted: boolean;
   userPicture: any;
 
-  constructor(private authService: AuthService, private userService: UserService, private activatedRoute: ActivatedRoute, private dialog: MatDialog) { }
+  constructor(private authService: AuthService,
+              private userService: UserService,
+              private activatedRoute: ActivatedRoute,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
     const id = +this.activatedRoute.snapshot.paramMap.get('id');
@@ -50,6 +55,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   openEditUserDialog() {
-
+    const dialogRef = this.dialog.open(UserEditDialogComponent);
+    const instance = dialogRef.componentInstance;
+    instance.user = this.authenticatedUser;
   }
 }

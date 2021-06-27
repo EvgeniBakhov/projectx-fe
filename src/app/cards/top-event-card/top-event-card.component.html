@@ -12,7 +12,10 @@
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <img [src]="event.thumbnail ? eventThumbnail: './assets/mock/estate-default.jpeg'">
+        <img [src]="event.thumbnail ? eventThumbnail: './assets/mock/default-ff.svg'">
+        <div class="description">
+            {{event.description}}
+        </div>
     </mat-card-content>
     <mat-card-footer>
         <div (click)="learnMoreClick()">Learn more</div>

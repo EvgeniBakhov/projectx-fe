@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { PendingInterceptorModule } from '../@fury/shared/loading-indicator/pending-interceptor.module';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@angular/material/form-field';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions, MatFormFieldModule} from '@angular/material/form-field';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarConfig } from '@angular/material/snack-bar';
 import {AuthModule} from './auth/auth.module';
 import {RouterModule} from '@angular/router';
@@ -42,9 +42,11 @@ import { BookingDialogComponent } from './dialogs/booking-dialog/booking-dialog.
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { UserTypePipe } from './pipes/user-type.pipe';
 import { UserPicturePickerComponent } from './dialogs/user-picture-picker/user-picture-picker.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { UserEditDialogComponent } from './dialogs/user-edit-dialog/user-edit-dialog.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -76,7 +78,11 @@ import { UserEditDialogComponent } from './dialogs/user-edit-dialog/user-edit-di
         MatCheckboxModule,
         MatSortModule,
         FormsModule,
-        MatTooltipModule
+        MatTooltipModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule
     ],
   declarations: [
       AppComponent,

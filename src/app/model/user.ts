@@ -21,10 +21,11 @@ export class User {
                 age: number,
                 email: string,
                 phone: string,
-                password: string,
-                type: UserType,
-                picture: string,
-                address: Address) {
+                address: Address,
+                password?: string,
+                type?: UserType,
+                picture?: string
+                ) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

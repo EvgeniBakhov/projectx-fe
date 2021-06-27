@@ -19,6 +19,16 @@ mat-card {
     }
   }
 
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      display: flex;
+      width: 100%;
+    }
+  }
+
   mat-card-footer {
     div {
       width: 100%;

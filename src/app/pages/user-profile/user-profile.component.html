@@ -5,7 +5,7 @@
                 User profile
             </fury-card-header>
             <fury-card-content fxLayout.gt-sm="row">
-                <div class="left-column">
+                <div class="sm-w-100 lg-w-30 left-column">
                     <img [src]="profileUser.picture ? userPicture : './assets/mock/user-mock/default.jpg'">
                     <span *ngIf="editPermitted"
                           #tooltip="matTooltip"
@@ -13,13 +13,18 @@
                           matTooltipPosition="below"
                           class="material-icons-outlined clickable upload-icon" (click)="openUploadDialog()">file_upload</span>
                     <div class="address">
-                        <span class="material-icons-outlined">person_pin_circle</span>
+                        <span class="material-icons-outlined"
+                              #tooltip="matTooltip"
+                              matTooltip="Update user profile"
+                              matTooltipPosition="below">person_pin_circle</span>
                         {{profileUser.address | address}}
                     </div>
                 </div>
                 <div class="right-column">
                     <div class="names">{{profileUser.firstName}} {{profileUser.lastName}}
-                        <span class="material-icons-outlined pencil clickable" (click)="openEditUserDialog()">edit</span>
+                        <span *ngIf="editPermitted"
+                              class="material-icons-outlined pencil clickable"
+                              (click)="openEditUserDialog()">edit</span>
                     </div>
                     <div>age: <span>{{profileUser.age}}</span></div>
                     <div>username: <span>{{profileUser.username}}</span></div>

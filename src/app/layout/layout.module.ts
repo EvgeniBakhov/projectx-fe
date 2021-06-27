@@ -14,6 +14,7 @@ import { FurySharedModule } from '../../@fury/fury-shared.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { EventSearchComponent } from './event-search/event-search.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { EstateSearchComponent } from './estate-search/estate-search.component';
 
 @NgModule({
     imports: [
@@ -34,9 +35,10 @@ import {ReactiveFormsModule} from '@angular/forms';
         ReactiveFormsModule
     ],
     exports: [
-        EventSearchComponent
+        EventSearchComponent,
+        EstateSearchComponent
     ],
-    declarations: [LayoutComponent, EventSearchComponent]
+    declarations: [LayoutComponent, EventSearchComponent, EstateSearchComponent]
 })
 export class LayoutModule {
 }

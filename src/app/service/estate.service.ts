@@ -15,4 +15,8 @@ export class EstateService {
   getEstateById(id: number): Observable<Estate> {
     return this.http.get<Estate>(`${this.BASE_URL}/${id}`);
   }
+
+  getCities(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.BASE_URL}/cities`);
+  }
 }

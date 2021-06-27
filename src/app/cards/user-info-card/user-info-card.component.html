@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card (click)="navigateToProfile()">
     <img class="avatar user-picture" [src]="picture">
     <div class="names title">{{user.firstName}} {{user.lastName}}</div>
     <div class="phone">

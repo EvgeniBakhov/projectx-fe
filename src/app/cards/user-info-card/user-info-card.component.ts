@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'fest-finder-user-info-card',
@@ -14,7 +15,7 @@ export class UserInfoCardComponent implements OnInit {
 
   picture: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.picture = this.userService.getPicture(this.user.id).subscribe(data => {
@@ -32,4 +33,8 @@ export class UserInfoCardComponent implements OnInit {
       reader.readAsDataURL(data);
     }
   }
+
+    navigateToProfile() {
+      this.router.navigate([`/profile/${this.user.id}`]);
+    }
 }

@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
   }
 
   private constructUser(): User {
-    const address = this.costructAddress();
+    const address = this.constructAddress();
     return new User(
         this.form.get('username').value,
         this.form.get('firstName').value,
@@ -96,13 +96,14 @@ export class RegisterComponent implements OnInit {
         this.form.get('age').value,
         this.form.get('email').value,
         this.form.get('phone').value,
+        address,
         this.form.get('password').value,
         this.form.get('type').value,
         null,
-        address);
+        );
   }
 
-  private costructAddress() {
+  private constructAddress() {
     return new Address(
         this.form.get('region').value,
         this.form.get('country').value,

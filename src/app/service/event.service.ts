@@ -23,4 +23,8 @@ export class EventService {
   getEventById(id: number): Observable<Event> {
     return this.http.get<Event>(`${this.BASE_URL}/${id}`);
   }
+
+  getCities(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.BASE_URL}/cities`);
+  }
 }
