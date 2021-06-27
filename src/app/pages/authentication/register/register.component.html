@@ -6,100 +6,119 @@
             </div>
         </div>
         <div class="display-1 text-center">Register</div>
-        <div fxLayout="row">
-            <div class="padding register-column" fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
-                <div fxFlex="auto" fxLayout="column">
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Username</mat-label>
-                        <input matInput required formControlName="username">
-                    </mat-form-field>
+        <form [formGroup]="form" (ngSubmit)="send()">
+            <div fxLayout="row">
+                <div class="padding register-column" fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
+                    <div fxFlex="auto" fxLayout="column">
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Username</mat-label>
+                            <input matInput required formControlName="username">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>First Name</mat-label>
-                        <input matInput required formControlName="firstName">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>First Name</mat-label>
+                            <input matInput required formControlName="firstName">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Last name</mat-label>
-                        <input matInput required formControlName="lastName">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Last name</mat-label>
+                            <input matInput required formControlName="lastName">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>E-Mail</mat-label>
-                        <input matInput required formControlName="email">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Age</mat-label>
+                            <mat-select required formControlName="age">
+                                <mat-option *ngFor="let number of numbers" [value]="number">{{number}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Password</mat-label>
-                        <input matInput [type]="inputType" formControlName="password" required>
-                        <button type="button" mat-icon-button matSuffix (click)="toggleVisibility()"
-                                matTooltip="Toggle Visibility">
-                            <mat-icon *ngIf="visible">visibility</mat-icon>
-                            <mat-icon *ngIf="!visible">visibility_off</mat-icon>
-                        </button>
-                        <mat-hint>Click the eye to toggle visibility</mat-hint>
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>E-Mail</mat-label>
+                            <input matInput required formControlName="email">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Password (Confirm)</mat-label>
-                        <input matInput [type]="inputType" formControlName="passwordConfirm" required>
-                        <button type="button" mat-icon-button matSuffix (click)="toggleVisibility()"
-                                matTooltip="Toggle Visibility">
-                            <mat-icon *ngIf="visible">visibility</mat-icon>
-                            <mat-icon *ngIf="!visible">visibility_off</mat-icon>
-                        </button>
-                        <mat-hint>Please repeat your password from above</mat-hint>
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="inputType" formControlName="password" required>
+                            <button type="button" mat-icon-button matSuffix (click)="toggleVisibility()"
+                                    matTooltip="Toggle Visibility">
+                                <mat-icon *ngIf="visible">visibility</mat-icon>
+                                <mat-icon *ngIf="!visible">visibility_off</mat-icon>
+                            </button>
+                            <mat-hint>Click the eye to toggle visibility</mat-hint>
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Phone</mat-label>
-                        <input matInput required formControlName="phone">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Password (Confirm)</mat-label>
+                            <input matInput [type]="inputType" formControlName="passwordConfirm" required>
+                            <button type="button" mat-icon-button matSuffix (click)="toggleVisibility()"
+                                    matTooltip="Toggle Visibility">
+                                <mat-icon *ngIf="visible">visibility</mat-icon>
+                                <mat-icon *ngIf="!visible">visibility_off</mat-icon>
+                            </button>
+                            <mat-hint>Please repeat your password from above</mat-hint>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Phone</mat-label>
+                            <input matInput required formControlName="phone">
+                        </mat-form-field>
+                    </div>
                 </div>
-            </div>
-            <div class="padding register-column" fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
-                <div fxFlex="auto" fxLayout="column">
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Type</mat-label>
-                        <input matInput required formControlName="type">
-                    </mat-form-field>
+                <div class="padding register-column" fxLayout="column" fxLayoutGap="16px" [formGroup]="form">
+                    <div fxFlex="auto" fxLayout="column">
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Type</mat-label>
+                            <mat-select required formControlName="type">
+                                    <mat-option *ngFor="let type of userTypes" [value]="type">{{type}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Region</mat-label>
-                        <input matInput required formControlName="region">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Region</mat-label>
+                            <mat-select required formControlName="region">
+                                <mat-option *ngFor="let region of regions" [value]="region">{{region}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Country</mat-label>
-                        <input matInput required formControlName="country">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Country</mat-label>
+                            <input matInput required formControlName="country">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Subdivision</mat-label>
-                        <input matInput formControlName="subdivision">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Subdivision</mat-label>
+                            <input matInput formControlName="subdivision">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Street</mat-label>
-                        <input matInput required formControlName="subdivision">
-                    </mat-form-field>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>City</mat-label>
+                            <input matInput formControlName="city">
+                        </mat-form-field>
 
-                    <mat-form-field fxFlex="grow">
-                        <mat-label>Additional details</mat-label>
-                        <input matInput formControlName="additionalDetails">
-                    </mat-form-field>
-                    <button type="button" color="primary" mat-raised-button (click)="send()">
-                        CREATE ACCOUNT
-                    </button>
-                    <div fxLayout="row" fxLayoutAlign="center center">
-                        <mat-checkbox class="caption">I accept the <a href="#">terms and conditions.</a></mat-checkbox>
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Street</mat-label>
+                            <input matInput required formControlName="street">
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="grow">
+                            <mat-label>Additional details</mat-label>
+                            <input matInput formControlName="additionalDetails">
+                        </mat-form-field>
+                        <button type="submit" color="primary" mat-raised-button [disabled]="!form.valid">
+                            CREATE ACCOUNT
+                        </button>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <mat-checkbox class="caption" formControlName="acceptTerms">I accept the <a href="#">terms and conditions.</a>
+                            </mat-checkbox>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <p class="secondary-text text-center">
-            Already have an account?<br/>
-            <a [routerLink]="['/login']">Sign in here</a>
-        </p>
+            <p class="secondary-text text-center">
+                Already have an account?<br/>
+                <a [routerLink]="['/login']">Sign in here</a>
+            </p>
+        </form>
     </div>
 </div>

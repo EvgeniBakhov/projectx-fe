@@ -10,13 +10,9 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldDefaultOptions } from '@ang
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarConfig } from '@angular/material/snack-bar';
 import {AuthModule} from './auth/auth.module';
 import {RouterModule} from '@angular/router';
-import { EventCardComponent } from './cards/event-card/event-card.component';
-import { EstateCardComponent } from './cards/estate-card/estate-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexModule} from '@angular/flex-layout';
-import { AddressPipe } from './pipes/address.pipe';
-import { PegiRatingPipe } from './pipes/pegi-rating.pipe';
 import {CardsModule} from './cards/cards.module';
 import { EventDetailsComponent } from './pages/event-details/event-details.component';
 import { EstateDetailsComponent } from './pages/estate-details/estate-details.component';
@@ -29,7 +25,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {FuryCardModule} from '../@fury/shared/card/card.module';
 import { CarouselComponent } from './carousel/carousel.component';
-import {GoogleMapsModule} from './pages/maps/google-maps/google-maps.module';
 import {EstatesDashboardComponent} from './pages/estates-dashboard/estates-dashboard.component';
 import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboard.component';
 import {PageModule} from '../@fury/shared/page/page.module';
@@ -43,26 +38,23 @@ import {BreadcrumbsModule} from '../@fury/shared/breadcrumbs/breadcrumbs.module'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSortModule} from '@angular/material/sort';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { BookingDialogComponent } from './dialogs/booking-dialog/booking-dialog.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { UserTypePipe } from './pipes/user-type.pipe';
+import { UserPicturePickerComponent } from './dialogs/user-picture-picker/user-picture-picker.component';
+import {FormsModule} from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { UserEditDialogComponent } from './dialogs/user-edit-dialog/user-edit-dialog.component';
 
 
 @NgModule({
     imports: [
-        // Angular Core Module // Don't remove!
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-
-        // Fury Core Modules
         AppRoutingModule,
-
-        // Layout Module (Sidenav, Toolbar, Quickpanel, Content)
         LayoutModule,
-
-        // Displays Loading Bar when a Route Request or HTTP Request is pending
         PendingInterceptorModule,
-
-        // Register a Service Worker (optional)
-        // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
         AuthModule,
         RouterModule,
         PageLayoutModule,
@@ -72,7 +64,6 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
         MatIconModule,
         MatPaginatorModule,
         FuryCardModule,
-        GoogleMapsModule,
         FlexModule,
         MatCardModule,
         CardsModule,
@@ -83,7 +74,9 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
         QRCodeModule,
         BreadcrumbsModule,
         MatCheckboxModule,
-        MatSortModule
+        MatSortModule,
+        FormsModule,
+        MatTooltipModule
     ],
   declarations: [
       AppComponent,
@@ -95,7 +88,12 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
       EventsDashboardComponent,
       EstatesDashboardComponent,
       ReservationDialogComponent,
-      NotFoundPageComponent],
+      NotFoundPageComponent,
+      BookingDialogComponent,
+      UserProfileComponent,
+      UserTypePipe,
+      UserPicturePickerComponent,
+      UserEditDialogComponent],
   bootstrap: [AppComponent],
   exports: [
   ],

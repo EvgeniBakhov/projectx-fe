@@ -1,13 +1,10 @@
 <fury-page-layout mode="card">
     <fury-page-layout-content>
         <fury-card>
-            <fury-card-header>
-            </fury-card-header>
-
             <fury-card-content>
                 <h1 class="margin-0 event-name">{{event.name}}</h1>
                 <div class="carousel-container">
-                    <fest-finder-carousel [slides]="event.pictures"></fest-finder-carousel>
+                    <fest-finder-carousel [slides]="event.pictures.length > 0 ? event.pictures : ['./assets/mock/default.svg']"></fest-finder-carousel>
                 </div>
                 <div class="event-data" fxLayout.lt-md="column" fxLayout.gt-md="row">
                     <div class="data-container" fxLayout.lt-sm="column">
@@ -18,8 +15,11 @@
                             <fest-finder-event-data-card [event]="event"></fest-finder-event-data-card>
                         </div>
                     </div>
-                    <div class="data-container">
-                        <mat-card>{{event.description}}</mat-card>
+                    <div class="data-container description-container">
+                        <mat-card>
+                            <span class="description-header">Description:</span>
+                            <span>{{event.description}}</span>
+                        </mat-card>
                     </div>
                 </div>
             </fury-card-content>

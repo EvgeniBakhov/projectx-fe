@@ -2,13 +2,21 @@
 mat-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
-  mat-card-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
+  mat-card-header {
+    .mat-card-header-text {
+      display: flex;
+      width: 100%;
+
+      mat-card-title {
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+      }
+    }
   }
 
   mat-card-footer {
@@ -19,6 +27,22 @@ mat-card {
       color: #C50B5B;
       justify-content: flex-end;
       padding: 4px;
+      cursor: pointer;
     }
+  }
+}
+
+.empty-card {
+  mat-card-header {
+    display: flex;
+    justify-content: center;
+
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50%;
   }
 }

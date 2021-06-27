@@ -1,22 +1,30 @@
-<mat-card routerLink="">
+<mat-card routerLink="" *ngIf="event">
     <mat-card-header>
-        <mat-card-title>
-            <mat-icon>whatshot</mat-icon>
+            <span class="material-icons-outlined">local_fire_department</span>
             This week top event
-        </mat-card-title>
         <mat-card-subtitle>
             <div>
-<!--                {{event.startDate | date: 'MMM d, y, h:mm a'}}-->
+                {{event.startDate | date: 'MMM d, y, h:mm a'}}
             </div>
             <div class="subheading-1">
-<!--                {{event.name}}-->
+                {{event.name}}
             </div>
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-<!--        <img [src]="event.thumbnail">-->
+        <img [src]="event.thumbnail ? eventThumbnail: './assets/mock/estate-default.jpeg'">
     </mat-card-content>
     <mat-card-footer>
         <div (click)="learnMoreClick()">Learn more</div>
     </mat-card-footer>
+</mat-card>
+<mat-card class="empty-card" *ngIf="!event">
+    <mat-card-header>
+        <span class="material-icons-outlined">local_fire_department</span>
+        This week top event
+    </mat-card-header>
+    <div>
+        Sorry, there is nothing for your location
+        <span class="material-icons-outlined">sentiment_dissatisfied</span>
+    </div>
 </mat-card>

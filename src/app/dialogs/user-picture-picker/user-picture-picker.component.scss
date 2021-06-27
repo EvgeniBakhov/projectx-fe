@@ -1,0 +1,22 @@
+div {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+
+    span {
+      display: flex;
+      justify-content: center;
+      font-size: large;
+      padding: 4px;
+    }
+  }
+  div {
+    input {
+      padding: 4px;
+    }
+  }
+}
+
+

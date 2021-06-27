@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {SharedModule} from '../shared/shared.module';
 import { EventSuggestionCardComponent } from './event-suggestion-card/event-suggestion-card.component';
 import { DashboardBannerComponent } from './dashboard-banner/dashboard-banner.component';
+import { EstateDataCardComponent } from './estate-data-card/estate-data-card.component';
+import {LoadingOverlayModule} from '../../@fury/shared/loading-overlay/loading-overlay.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,12 @@ import { DashboardBannerComponent } from './dashboard-banner/dashboard-banner.co
     UserInfoCardComponent,
     EventDataCardComponent,
     EventSuggestionCardComponent,
-    DashboardBannerComponent
+    DashboardBannerComponent,
+    EstateDataCardComponent
   ],
-  imports: [
-    CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule
-  ],
-  exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent, EventSuggestionCardComponent, TopEventCardComponent]
+    imports: [
+        CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule, LoadingOverlayModule
+    ],
+    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent, EventSuggestionCardComponent, TopEventCardComponent, EstateDataCardComponent, AddressPipe]
 })
 export class CardsModule { }

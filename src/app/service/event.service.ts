@@ -8,13 +8,19 @@ import {HttpClient} from '@angular/common/http';
 })
 export class EventService {
 
+  private readonly BASE_URL = `http://localhost:8080/event`;
+
   constructor(private http: HttpClient) { }
 
   getTopEvent(): Observable<Event> {
-    return this.http.get<Event>('http://localhost:8080/event/top');
+    return this.http.get<Event>(`${this.BASE_URL}/top`);
   }
 
   getThumbnail(id: number): Observable<Blob> {
-    return this.http.get(`http://localhost:8080/event/${id}/thumbnail`, { responseType: 'blob'});
+    return this.http.get(`${this.BASE_URL}/${id}/thumbnail`, { responseType: 'blob'});
+  }
+
+  getEventById(id: number): Observable<Event> {
+    return this.http.get<Event>(`${this.BASE_URL}/${id}`);
   }
 }

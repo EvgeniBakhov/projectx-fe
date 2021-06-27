@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {Event} from '../../model/event';
-import {CanColor, ThemePalette} from '@angular/material/core';
 import {EventStatus} from '../../model/enums/event-status';
 import {Color} from '../../pages/apps/inbox/shared/color.interface';
 import {PlaceType} from '../../model/enums/place-type';
@@ -11,12 +10,14 @@ import {ReservationDialogComponent} from '../../dialogs/reservation-dialog/reser
 @Component({
   selector: 'fest-finder-event-data-card',
   templateUrl: './event-data-card.component.html',
-  styleUrls: ['./event-data-card.component.scss']
+  styleUrls: ['./event-data-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EventDataCardComponent implements OnInit {
   @Input()
   event: Event;
 
+  dataLoaded: boolean;
   chipColor: Color;
   placeTypeIcon: string;
   placeTypeText: string;
@@ -26,17 +27,21 @@ export class EventDataCardComponent implements OnInit {
 
   constructor(private dialog: MatDialog) { }
 
+
+
   ngOnInit(): void {
+    this.dataLoaded = false;
     this.placeTypeIcon = this.getPlaceTypeIcon(this.event.placeType);
     this.placeTypeText = this.getPlaceTypeText(this.event.placeType);
     this.eventTypeIcon = this.getEventTypeIcon(this.event.type);
     this.eventTypeText = this.getEventTypeText(this.event.type);
     this.chipColor = this.getChipColor(this.event.status);
     this.chipText = this.getChipText(this.event.status);
+    this.dataLoaded = true;
   }
 
   getPlaceTypeIcon(placeType: PlaceType): string {
-    switch (placeType) {
+    switch (+placeType) {
       case PlaceType.INDOOR: return 'meeting_room';
       case PlaceType.ONLINE: return 'devices';
       case PlaceType.OPEN_AIR: return 'nature';
@@ -44,7 +49,7 @@ export class EventDataCardComponent implements OnInit {
   }
 
   getPlaceTypeText(placeType: PlaceType): string {
-    switch (placeType) {
+    switch (+placeType) {
       case PlaceType.INDOOR: return 'INDOOR';
       case PlaceType.ONLINE: return 'ONLINE';
       case PlaceType.OPEN_AIR: return 'OPEN AIR';
@@ -52,7 +57,7 @@ export class EventDataCardComponent implements OnInit {
   }
 
   getEventTypeIcon(eventType: EventType): string {
-    switch (eventType) {
+    switch (+eventType) {
       case EventType.CONCERT: return 'music_note';
       case EventType.FESTIVAL: return 'celebration';
       case EventType.CULTURE_ACTIVITY: return 'theater_comedy';
@@ -69,7 +74,7 @@ export class EventDataCardComponent implements OnInit {
   }
 
   getEventTypeText(eventType: EventType): string {
-    switch (eventType) {
+    switch (+eventType) {
       case EventType.CONCERT:
         return 'CONCERT';
       case EventType.FESTIVAL:
@@ -98,7 +103,7 @@ export class EventDataCardComponent implements OnInit {
   }
 
   private getChipColor(status: EventStatus): Color {
-    switch (status) {
+    switch (+status) {
       case EventStatus.PLANNED: return {name: 'planned', code: '2879F2'};
       case EventStatus.POSTPONED: return {name: 'postponed', code: 'F2A128'};
       case EventStatus.RIGHT_NOW: return {name: 'right_now', code: '2B8834'};
@@ -107,7 +112,7 @@ export class EventDataCardComponent implements OnInit {
   }
 
   private getChipText(status: EventStatus) {
-    switch (status) {
+    switch (+status) {
       case EventStatus.PLANNED: return 'PLANNED';
       case EventStatus.POSTPONED: return 'POSTPONED';
       case EventStatus.RIGHT_NOW: return 'RIGHT NOW';

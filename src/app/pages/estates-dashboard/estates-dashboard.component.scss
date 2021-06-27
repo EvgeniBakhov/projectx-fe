@@ -1,10 +1,16 @@
+.screen-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 4fr;
   height: 100%;
   padding-right: 0;
   padding-left: 15px;
-  /* Put a card in the next row when previous cards take all width */
 
 
   .card-container {

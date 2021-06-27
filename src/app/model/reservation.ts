@@ -5,7 +5,6 @@ import {ReservationStatus} from './enums/reservation-status';
 export interface Reservation {
     id: number;
     event: Event;
-    price: number;
     user: User;
     status: ReservationStatus;
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Event} from '../../model/event';
 import {EventStatus} from '../../model/enums/event-status';
 import {Router} from '@angular/router';

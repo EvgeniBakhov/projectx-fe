@@ -1,4 +1,5 @@
 <mat-card>
+    <fury-loading-overlay></fury-loading-overlay>
     <div class="data-container">
         <div class="event-date">
             <span class="material-icons-outlined">schedule</span>
@@ -9,7 +10,7 @@
         </div>
         <div class="event-status">
             <mat-chip-list>
-                <mat-chip>{{chipText}}</mat-chip>
+                <mat-chip>{{event.status}}</mat-chip>
             </mat-chip-list>
             <img [src]="event.ageRestrictions | pegiRating">
         </div>

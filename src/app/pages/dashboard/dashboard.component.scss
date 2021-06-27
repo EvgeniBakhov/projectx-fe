@@ -12,6 +12,7 @@
   .dashboard-content {
     display: flex;
     flex-direction: row;
+    height: 100%;
 
     .top-event-container {
       display: flex;
@@ -24,6 +25,11 @@
 
     .event-suggestion-container {
       width: 50%;
+      .empty-suggested-events {
+        display: flex;
+        justify-content: center;
+        padding-top: 50%;
+      }
     }
   }
 

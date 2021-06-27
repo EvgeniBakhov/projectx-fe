@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {User} from '../../model/user';
+import {UserService} from '../../service/user.service';
 
 @Component({
   selector: 'fest-finder-user-info-card',
@@ -11,9 +12,24 @@ export class UserInfoCardComponent implements OnInit {
   @Input()
   user: User;
 
-  constructor() { }
+  picture: any;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.picture = this.userService.getPicture(this.user.id).subscribe(data => {
+      this.createImageFromBlob(data);
+    });
   }
 
+  private createImageFromBlob(data: Blob) {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      this.picture = reader.result;
+    }, false);
+
+    if (data) {
+      reader.readAsDataURL(data);
+    }
+  }
 }

@@ -53,7 +53,7 @@ export class ToolbarUserComponent implements OnInit {
   }
 
   goToProfile(): void {
-    return;
+    this.router.navigate([`/profile/${this.user.id}`]);
   }
 
   goToMyBookings(): void {

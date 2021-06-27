@@ -13,4 +13,5 @@ export interface Estate {
     owner: User;
     description: string;
     pictures: string[];
+    tags?: string[];
 }

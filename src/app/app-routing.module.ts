@@ -9,6 +9,8 @@ import {AuthGuard} from './auth/guards/auth.guard';
 import {EventsDashboardComponent} from './pages/events-dashboard/events-dashboard.component';
 import {EstatesDashboardComponent} from './pages/estates-dashboard/estates-dashboard.component';
 import {NotFoundPageComponent} from './pages/not-found-page/not-found-page.component';
+import {EventDetailsResolver} from './resolvers/event-details.resolver';
+import {UserProfileComponent} from './pages/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -29,7 +31,14 @@ const routes: Routes = [
     children: [
       {
         path: 'event/:id',
-        component: EventDetailsComponent
+        component: EventDetailsComponent,
+        canActivate: [AuthGuard],
+        resolve: { event: EventDetailsResolver }
+      },
+      {
+        path: 'profile/:id',
+        component: UserProfileComponent,
+        canActivate: [AuthGuard]
       },
       {
         path: 'estate/:id',
@@ -78,7 +87,8 @@ const routes: Routes = [
     anchorScrolling: 'enabled',
     relativeLinkResolution: 'legacy'
   })],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [EventDetailsResolver]
 })
 export class AppRoutingModule {
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {Estate} from '../../model/estate';
 import {EstateType} from '../../model/enums/estate-type';
 import {Router} from '@angular/router';
@@ -10,6 +10,9 @@ import {UserType} from '../../model/enums/user-type';
   styleUrls: ['./estate-card.component.scss']
 })
 export class EstateCardComponent implements OnInit {
+
+  @Input()
+  estate: Estate;
 
   estateMock: Estate = {
     id: 1,
@@ -40,9 +43,6 @@ export class EstateCardComponent implements OnInit {
     description: 'Really effortable apartment with fantastic view in peaceful place.',
     pictures: ['assets/img/estate_default.jpeg']
   };
-
-  @Input()
-  estate: Estate;
 
   constructor(private router: Router) { }
 

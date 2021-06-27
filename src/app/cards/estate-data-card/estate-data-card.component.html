@@ -1,0 +1,42 @@
+<mat-card>
+    <div class="data-container">
+        <div class="estate-area">
+            <span class="material-icons-outlined">home</span>
+            <span>
+                <div class="subheading-2">{{estate.area | number: '1.0-2'}} sq.m</div>
+            </span>
+        </div>
+        <div class="estate-location">
+            <mat-icon>location_on</mat-icon>
+            {{estate.address | address}}
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="estate-beds">
+            <span class="material-icons-outlined">hotel</span>
+            {{estate.numOfBedrooms}}
+        </div>
+        <div class="estate-price">
+            <mat-icon>attach_money</mat-icon>
+            {{estate.rentPrice}}/night
+        </div>
+    </div>
+    <div class="data-container last-data-container">
+        <div class="estate-type">
+            <span class="material-icons-outlined">maps_home_work</span>
+            {{estate.type}}
+        </div>
+        <div class="estate-tags">
+            <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+                <mat-chip class="example-box"
+                          cdkDrag
+                          *ngFor="let tag of estate.tags">{{tag}}</mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+    <div class="button-container">
+        <button type="button" mat-raised-button color="primary" (click)="openBookingDialog()">
+            BOOK
+        </button>
+    </div>
+</mat-card>

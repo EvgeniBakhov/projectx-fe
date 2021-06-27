@@ -1,0 +1,32 @@
+<fury-page-layout mode="card">
+    <fury-page-layout-content>
+        <fury-card>
+            <fury-card-header>
+                User profile
+            </fury-card-header>
+            <fury-card-content fxLayout.gt-sm="row">
+                <div class="left-column">
+                    <img [src]="profileUser.picture ? userPicture : './assets/mock/user-mock/default.jpg'">
+                    <span *ngIf="editPermitted"
+                          #tooltip="matTooltip"
+                          matTooltip="Upload profile picture"
+                          matTooltipPosition="below"
+                          class="material-icons-outlined clickable upload-icon" (click)="openUploadDialog()">file_upload</span>
+                    <div class="address">
+                        <span class="material-icons-outlined">person_pin_circle</span>
+                        {{profileUser.address | address}}
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="names">{{profileUser.firstName}} {{profileUser.lastName}}
+                        <span class="material-icons-outlined pencil clickable" (click)="openEditUserDialog()">edit</span>
+                    </div>
+                    <div>age: <span>{{profileUser.age}}</span></div>
+                    <div>username: <span>{{profileUser.username}}</span></div>
+                    <div>email: <span>{{profileUser.email}}</span></div>
+                    <div>type: <span>{{profileUser.type | userType}}</span></div>
+                </div>
+            </fury-card-content>
+        </fury-card>
+    </fury-page-layout-content>
+</fury-page-layout>
