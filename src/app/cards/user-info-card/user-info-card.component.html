@@ -1,5 +1,5 @@
 <mat-card (click)="navigateToProfile()">
-    <img class="avatar user-picture" [src]="picture">
+    <img class="avatar user-picture" [src]="user.picture ? picture : './assets/mock/user-mock/default.jpg'">
     <div class="names title">{{user.firstName}} {{user.lastName}}</div>
     <div class="phone">
         <span class="material-icons-outlined call-icon">call</span>

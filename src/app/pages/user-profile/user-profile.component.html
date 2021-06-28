@@ -29,7 +29,8 @@
                     <div>age: <span>{{profileUser.age}}</span></div>
                     <div>username: <span>{{profileUser.username}}</span></div>
                     <div>email: <span>{{profileUser.email}}</span></div>
-                    <div>type: <span>{{profileUser.type | userType}}</span></div>
+                    <div>type: <span>{{profileUser.type.toString()}}</span></div>
+                    <div>Additional info: <span>{{profileUser.address.additionalDetails}}</span></div>
                 </div>
             </fury-card-content>
         </fury-card>

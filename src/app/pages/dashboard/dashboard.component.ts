@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {Event} from '../../model/event';
 import {EventService} from '../../service/event.service';
-import {Observable} from 'rxjs';
 import {User} from '../../model/user';
 import {AuthService} from '../../auth/services/auth.service';
 
@@ -23,13 +22,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.authService.getAuthenticatedUser().subscribe(user => {
       this.user = user;
+      this.eventService.getTopEvent().subscribe(event => {
+        this.topEvent = event;
+      });
       this.eventService.getAllEventsWithFilters(user.address.city, '', '', '', '')
           .subscribe(response => {
             this.eventSuggestions = response;
           });
-    });
-    this.eventService.getTopEvent().subscribe(event => {
-      this.topEvent = event;
     });
   }
 }

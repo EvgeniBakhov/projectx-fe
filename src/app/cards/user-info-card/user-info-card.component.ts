@@ -19,7 +19,9 @@ export class UserInfoCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.picture = this.userService.getPicture(this.user.id).subscribe(data => {
-      this.createImageFromBlob(data);
+      if (data.size !== 0) {
+        this.createImageFromBlob(data);
+      }
     });
   }
 

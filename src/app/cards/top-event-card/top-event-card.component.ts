@@ -6,12 +6,10 @@ import {EventService} from '../../service/event.service';
 @Component({
   selector: 'fest-finder-top-event-card',
   templateUrl: './top-event-card.component.html',
-  styleUrls: ['./top-event-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./top-event-card.component.scss']
 })
 export class TopEventCardComponent implements OnInit {
-  @Input()
-  event: Event;
+  @Input() event: Event;
 
   eventThumbnail: any;
 
@@ -19,7 +17,9 @@ export class TopEventCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventService.getThumbnail(this.event.id).subscribe( thumbnail => {
-      this.createImageFromBlob(thumbnail);
+      if (thumbnail.size !== 0) {
+        this.createImageFromBlob(thumbnail);
+      }
     });
   }
 
