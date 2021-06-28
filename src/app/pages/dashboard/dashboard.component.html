@@ -5,7 +5,7 @@
                   <fest-finder-top-event-card [event]="topEvent"></fest-finder-top-event-card>
             </div>
             <div class="event-suggestion-container">
-                  <div class="suggested-events" *ngIf="eventSuggestions.length > 0"></div>
+                  <div class="suggested-events"></div>
                         <div *ngFor="let event of eventSuggestions">
                               <fest-finder-event-suggestion-card [event]="event"></fest-finder-event-suggestion-card>
                         </div>

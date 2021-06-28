@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Event} from '../../model/event';
 import {EventStatus} from '../../model/enums/event-status';
 import {Color} from '../../pages/apps/inbox/shared/color.interface';
@@ -6,16 +6,16 @@ import {PlaceType} from '../../model/enums/place-type';
 import {EventType} from '../../model/enums/event-type';
 import {MatDialog} from '@angular/material/dialog';
 import {ReservationDialogComponent} from '../../dialogs/reservation-dialog/reservation-dialog.component';
+import {AgeRestriction} from '../../model/enums/age-restriction';
 
 @Component({
   selector: 'fest-finder-event-data-card',
   templateUrl: './event-data-card.component.html',
-  styleUrls: ['./event-data-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./event-data-card.component.scss']
 })
 export class EventDataCardComponent implements OnInit {
-  @Input()
-  event: Event;
+  @Input() event: Event;
+  @Input() thumbnail: File;
 
   dataLoaded: boolean;
   chipColor: Color;
@@ -31,88 +31,78 @@ export class EventDataCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataLoaded = false;
-    this.placeTypeIcon = this.getPlaceTypeIcon(this.event.placeType);
-    this.placeTypeText = this.getPlaceTypeText(this.event.placeType);
-    this.eventTypeIcon = this.getEventTypeIcon(this.event.type);
-    this.eventTypeText = this.getEventTypeText(this.event.type);
-    this.chipColor = this.getChipColor(this.event.status);
+    this.placeTypeIcon = this.getPlaceTypeIcon(this.event.placeType.toString());
+    this.placeTypeText = this.getPlaceTypeText(this.event.placeType.toString());
+    this.eventTypeIcon = this.getEventTypeIcon(this.event.type.toString());
+    this.eventTypeText = this.getEventTypeText(this.event.type.toString());
     this.chipText = this.getChipText(this.event.status);
     this.dataLoaded = true;
   }
 
-  getPlaceTypeIcon(placeType: PlaceType): string {
-    switch (+placeType) {
-      case PlaceType.INDOOR: return 'meeting_room';
-      case PlaceType.ONLINE: return 'devices';
-      case PlaceType.OPEN_AIR: return 'nature';
+  getPlaceTypeIcon(placeType: string): string {
+    switch (placeType) {
+      case 'INDOOR': return 'meeting_room';
+      case 'ONLINE': return 'devices';
+      case 'OPEN_AIR': return 'nature';
     }
   }
 
-  getPlaceTypeText(placeType: PlaceType): string {
-    switch (+placeType) {
-      case PlaceType.INDOOR: return 'INDOOR';
-      case PlaceType.ONLINE: return 'ONLINE';
-      case PlaceType.OPEN_AIR: return 'OPEN AIR';
+  getPlaceTypeText(placeType: string): string {
+    switch (placeType) {
+      case 'INDOOR': return 'INDOOR';
+      case 'ONLINE': return 'ONLINE';
+      case 'OPEN_AIR': return 'OPEN AIR';
     }
   }
 
-  getEventTypeIcon(eventType: EventType): string {
-    switch (+eventType) {
-      case EventType.CONCERT: return 'music_note';
-      case EventType.FESTIVAL: return 'celebration';
-      case EventType.CULTURE_ACTIVITY: return 'theater_comedy';
-      case EventType.HOUSE_PARTY: return 'food_bank';
-      case EventType.MEETING: return 'groups';
-      case EventType.PARK_ACTIVITY: return 'park';
-      case EventType.PICNIC: return 'outdoor_grill';
-      case EventType.PRESENTATION: return 'slideshow';
-      case EventType.SHOW: return 'visibility';
-      case EventType.SPORTS_ACTIVITY: return 'directions_run';
-      case EventType.OTHER: return 'pending';
+  getEventTypeIcon(eventType: string): string {
+    switch (eventType) {
+      case 'CONCERT': return 'music_note';
+      case 'FESTIVAL': return 'celebration';
+      case 'CULTURE_ACTIVITY': return 'theater_comedy';
+      case 'HOUSE_PARTY': return 'food_bank';
+      case 'MEETING': return 'groups';
+      case 'PARK_ACTIVITY': return 'park';
+      case 'PICNIC': return 'outdoor_grill';
+      case 'PRESENTATION': return 'slideshow';
+      case 'SHOW': return 'visibility';
+      case 'SPORTS_ACTIVITY': return 'directions_run';
+      case 'OTHER': return 'pending';
       default: return 'pending';
     }
   }
 
-  getEventTypeText(eventType: EventType): string {
-    switch (+eventType) {
-      case EventType.CONCERT:
+  getEventTypeText(eventType: string): string {
+    switch (eventType) {
+      case 'CONCERT':
         return 'CONCERT';
-      case EventType.FESTIVAL:
+      case 'FESTIVAL':
         return 'FESTIVAL';
-      case EventType.CULTURE_ACTIVITY:
+      case 'CULTURE_ACTIVITY':
         return 'CULTURE ACTIVITY';
-      case EventType.HOUSE_PARTY:
+      case 'HOUSE_PARTY':
         return 'HOUSE PARTY';
-      case EventType.MEETING:
+      case 'MEETING':
         return 'MEETING';
-      case EventType.PARK_ACTIVITY:
+      case 'PARK_ACTIVITY':
         return 'PARK ACTIVITY';
-      case EventType.PICNIC:
+      case 'PICNIC':
         return 'PICNIC';
-      case EventType.PRESENTATION:
+      case 'PRESENTATION':
         return 'PRESENTATION';
-      case EventType.SHOW:
+      case 'SHOW':
         return 'SHOW';
-      case EventType.SPORTS_ACTIVITY:
+      case 'SPORTS_ACTIVITY':
         return 'SPORTS ACTIVITY';
-      case EventType.OTHER:
+      case 'OTHER':
         return 'OTHER';
       default:
         return 'OTHER';
     }
   }
 
-  private getChipColor(status: EventStatus): Color {
-    switch (+status) {
-      case EventStatus.PLANNED: return {name: 'planned', code: '2879F2'};
-      case EventStatus.POSTPONED: return {name: 'postponed', code: 'F2A128'};
-      case EventStatus.RIGHT_NOW: return {name: 'right_now', code: '2B8834'};
-      case EventStatus.CANCELLED: return {name: 'cancelled', code: 'BC1A1A'};
-    }
-  }
-
   private getChipText(status: EventStatus) {
-    switch (+status) {
+    switch (status) {
       case EventStatus.PLANNED: return 'PLANNED';
       case EventStatus.POSTPONED: return 'POSTPONED';
       case EventStatus.RIGHT_NOW: return 'RIGHT NOW';
@@ -124,5 +114,6 @@ export class EventDataCardComponent implements OnInit {
     const dialogRef = this.dialog.open(ReservationDialogComponent);
     const instance = dialogRef.componentInstance;
     instance.event = this.event;
+    instance.thumbnail = this.thumbnail;
   }
 }

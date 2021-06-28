@@ -6,10 +6,29 @@ mat-card {
   display: flex;
   flex-direction: column;
 
-  button {
+  div {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+mat-option {
+  span {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+
+    img {
+      border-radius: 5px;
+      margin: 4px;
+    }
   }
 }
 

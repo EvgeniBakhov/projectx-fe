@@ -8,7 +8,6 @@
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  height: 100%;
   padding-right: 0;
   padding-left: 15px;
   /* Put a card in the next row when previous cards take all width */
@@ -17,10 +16,10 @@
   .card-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 35px;
+    grid-row-gap: 15px;
     grid-column-gap: 10px;
     box-sizing: border-box;
-    padding: 0 15px 20px 15px;
+    padding: 0 15px;
 
     fest-finder-event-card {
       margin: 0;

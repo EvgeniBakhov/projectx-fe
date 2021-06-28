@@ -14,12 +14,13 @@ import {Reservation} from '../../model/reservation';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ReservationDialogComponent implements OnInit {
-  @Input()
-  event: Event;
+  @Input() event: Event;
+  @Input() thumbnail: File;
 
   user: User;
   reservationUrl: string;
   createdReservation: Reservation;
+  qrVisible = false;
 
   constructor(private authService: AuthService,
               private ipService: IpService,
@@ -36,8 +37,12 @@ export class ReservationDialogComponent implements OnInit {
           this.reservationUrl = `${resp.ip}:4200/reservation/${this.createdReservation.id}`;
         });
       }, (error) => {
-        this.snackbar.open(error);
+        this.snackbar.open('Error acquired:' + error);
       });
     });
+  }
+
+  toggleQrCode() {
+    this.qrVisible = true;
   }
 }

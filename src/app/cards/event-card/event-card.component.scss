@@ -35,11 +35,16 @@
 }
 
 mat-card {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+
+  &:hover{
+    margin-top:-10px;
+    margin-bottom: 10px;
+    transition: 0.3s all ease-in-out;
+  }
 
   mat-card-header {
     justify-content: space-between;

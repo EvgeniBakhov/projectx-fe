@@ -1,11 +1,13 @@
+<fury-loading-overlay></fury-loading-overlay>
 <fury-page class="dashboard" fxLayout.lt-sm="row">
-    <fest-finder-event-search class="sm-w-100"></fest-finder-event-search>
-    <div *ngIf="events.length > 0">
-        <div *ngFor="let event in events">
-            <fest-finder-event-card class="card-container" fxLayoutGap="8px" [event]="event"></fest-finder-event-card>
+    <fest-finder-event-search (searchEvent)="loadEvents($event)" class="sm-w-100"></fest-finder-event-search>
+    <div class="card-container" *ngIf="events.length !== 0">
+        <div *ngFor="let event of events">
+            <fest-finder-event-card fxLayoutGap="8px" [event]="event"></fest-finder-event-card>
         </div>
     </div>
     <div *ngIf="events.length === 0">
         <div class="subheading-2 screen-center">There is no events matching criteria. Try another search.</div>
     </div>
+
 </fury-page>

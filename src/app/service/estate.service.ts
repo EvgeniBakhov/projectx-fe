@@ -19,4 +19,25 @@ export class EstateService {
   getCities(): Observable<string[]> {
     return this.http.get<string[]>(`${this.BASE_URL}/cities`);
   }
+
+  getAllEstatesWithFilters(city: string,
+                           type: string,
+                           minBeds: number,
+                           maxBeds: number,
+                           minArea: number,
+                           maxArea: number,
+                           minPrice: number,
+                           maxPrice: number): Observable<Estate[]> {
+    return this.http.get<Estate[]>(`${this.BASE_URL}/all`, {
+      params: {
+        city: city,
+        type: type,
+        minBeds: minBeds.toString(),
+        maxBeds: maxBeds.toString(),
+        minArea: minArea.toString(),
+        maxArea: maxArea.toString(),
+        minPrice: minPrice.toString(),
+        maxPrice: maxPrice.toString()
+      }});
+  }
 }

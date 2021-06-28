@@ -11,6 +11,8 @@ import {EstatesDashboardComponent} from './pages/estates-dashboard/estates-dashb
 import {NotFoundPageComponent} from './pages/not-found-page/not-found-page.component';
 import {EventDetailsResolver} from './resolvers/event-details.resolver';
 import {UserProfileComponent} from './pages/user-profile/user-profile.component';
+import {ReservationDetailsComponent} from './pages/reservation-details/reservation-details.component';
+import {ReservationDetailsResolver} from './resolvers/reservation-details.resolver';
 
 const routes: Routes = [
   {
@@ -24,6 +26,11 @@ const routes: Routes = [
   {
     path: '404',
     component: NotFoundPageComponent
+  },
+  {
+    path: 'reservation/:id',
+    component: ReservationDetailsComponent,
+    resolve: { reservation : ReservationDetailsResolver }
   },
   {
     path: '',

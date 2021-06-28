@@ -1,21 +1,76 @@
 <mat-card class="sm-w-100">
-    <mat-form-field fxFlex="100%">
-        <mat-label>Select a city</mat-label>
-        <input [disabled]="cities" formControlName="city" matInput [matAutocomplete]="auto" [formControl]="ctrlCities">
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let city of filteredCities | async" [value]="city">
-                <span>{{ city }}</span>
-            </mat-option>
-        </mat-autocomplete>
-        <button *ngIf="ctrlCities.value" type="button" mat-icon-button (click)="ctrlCities.reset()" matSuffix>
-            <mat-icon>close</mat-icon>
+    <div [formGroup]="form">
+        <mat-form-field fxFlex="100%">
+            <mat-label>Select a city</mat-label>
+            <input formControlName="city" matInput [matAutocomplete]="auto"
+                   [formControl]="ctrlCities">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let city of filteredCities | async" [value]="city">
+                    <span>{{ city }}</span>
+                </mat-option>
+            </mat-autocomplete>
+            <button *ngIf="ctrlCities.value" type="button" mat-icon-button (click)="ctrlCities.reset()" matSuffix>
+                <mat-icon>close</mat-icon>
+            </button>
+            <button *ngIf="!ctrlCities.value" type="button" mat-icon-button matSuffix>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        <mat-form-field fxFlex="100%">
+            <mat-label>Select an event type</mat-label>
+            <input formControlName="type" matInput [matAutocomplete]="autoType"
+                   [formControl]="ctrlTypes">
+            <mat-autocomplete #autoType="matAutocomplete">
+                <mat-option *ngFor="let type of filteredTypes | async" [value]="type">
+                    <span>{{ type }}</span>
+                </mat-option>
+            </mat-autocomplete>
+            <button *ngIf="ctrlTypes.value" type="button" mat-icon-button (click)="ctrlTypes.reset()" matSuffix>
+                <mat-icon>close</mat-icon>
+            </button>
+            <button *ngIf="!ctrlTypes.value" type="button" mat-icon-button matSuffix>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        <mat-form-field fxFlex="100%">
+            <mat-label>Select a place type</mat-label>
+            <input formControlName="place" matInput [matAutocomplete]="autoPlace"
+                   [formControl]="ctrlPlaces">
+            <mat-autocomplete #autoPlace="matAutocomplete">
+                <mat-option *ngFor="let place of filteredPlaces | async" [value]="place">
+                    <span>{{ place }}</span>
+                </mat-option>
+            </mat-autocomplete>
+            <button *ngIf="ctrlPlaces.value" type="button" mat-icon-button (click)="ctrlPlaces.reset()" matSuffix>
+                <mat-icon>close</mat-icon>
+            </button>
+            <button *ngIf="!ctrlPlaces.value" type="button" mat-icon-button matSuffix>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        <mat-form-field fxFlex="100%">
+            <mat-label>Age restrictions</mat-label>
+            <input formControlName="ageRestrictions" matInput [matAutocomplete]="autoAge"
+                   [formControl]="ctrlAges">
+            <mat-autocomplete #autoAge="matAutocomplete">
+                <mat-option *ngFor="let age of filteredAges | async" [value]="age">
+                    <span>
+                        <img [src]="age | pegiRating">{{ age }}</span>
+                </mat-option>
+            </mat-autocomplete>
+            <button *ngIf="ctrlAges.value" type="button" mat-icon-button (click)="ctrlAges.reset()" matSuffix>
+                <mat-icon>close</mat-icon>
+            </button>
+            <button *ngIf="!ctrlAges.value" type="button" mat-icon-button matSuffix>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-hint></mat-hint>
+        </mat-form-field>
+        <button type="button" mat-raised-button color="primary" (click)="send()">
+            <mat-icon>search</mat-icon>
         </button>
-        <button *ngIf="!ctrlCities.value" type="button" mat-icon-button matSuffix>
-            <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-        <mat-hint></mat-hint>
-    </mat-form-field>
-    <button type="button" mat-raised-button color="primary">
-        <mat-icon>search</mat-icon>
-    </button>
+    </div>
 </mat-card>

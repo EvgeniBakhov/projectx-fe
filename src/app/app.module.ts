@@ -47,6 +47,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { UserEditDialogComponent } from './dialogs/user-edit-dialog/user-edit-dialog.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
+import {LoadingOverlayModule} from '../@fury/shared/loading-overlay/loading-overlay.module';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ReservationDetailsComponent } from './pages/reservation-details/reservation-details.component';
 
 
 @NgModule({
@@ -82,7 +85,9 @@ import {MatInputModule} from '@angular/material/input';
         ReactiveFormsModule,
         MatFormFieldModule,
         MatSelectModule,
-        MatInputModule
+        MatInputModule,
+        LoadingOverlayModule,
+        MatProgressSpinnerModule
     ],
   declarations: [
       AppComponent,
@@ -99,7 +104,8 @@ import {MatInputModule} from '@angular/material/input';
       UserProfileComponent,
       UserTypePipe,
       UserPicturePickerComponent,
-      UserEditDialogComponent],
+      UserEditDialogComponent,
+      ReservationDetailsComponent],
   bootstrap: [AppComponent],
   exports: [
   ],

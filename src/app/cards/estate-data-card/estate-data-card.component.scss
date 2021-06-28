@@ -9,6 +9,7 @@ mat-card {
     flex-direction: row;
     align-items: center;
     padding: 4px;
+    justify-content: space-between;
 
     .estate-area {
       display: flex;
@@ -47,6 +48,12 @@ mat-card {
       flex-direction: row;
       align-items: center;
       width: 50%;
+      justify-content: flex-end;
+    }
+    .estate-price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       justify-content: flex-end;
     }
 

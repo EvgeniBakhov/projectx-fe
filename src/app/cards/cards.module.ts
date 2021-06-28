@@ -33,6 +33,6 @@ import {LoadingOverlayModule} from '../../@fury/shared/loading-overlay/loading-o
     imports: [
         CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule, LoadingOverlayModule
     ],
-    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent, EventSuggestionCardComponent, TopEventCardComponent, EstateDataCardComponent, AddressPipe]
+    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent, EventSuggestionCardComponent, TopEventCardComponent, EstateDataCardComponent, AddressPipe, PegiRatingPipe]
 })
 export class CardsModule { }

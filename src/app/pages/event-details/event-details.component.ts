@@ -16,16 +16,27 @@ import {EventService} from '../../service/event.service';
 export class EventDetailsComponent implements OnInit {
 
   event: Event;
-  id: number;
+  thumbnail: any;
 
   constructor(private activatedRoute: ActivatedRoute, private eventService: EventService) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((data: { event: Event }) => {
       this.event = data.event;
+      this.eventService.getThumbnail(this.event.id).subscribe(image => {
+        this.createImageFromBlob(image);
+      });
     });
-    // this.eventService.getEventById(this.id).subscribe(event => {
-    //   this.event = event;
-    // });
+  }
+
+  private createImageFromBlob(data: Blob) {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      this.thumbnail = reader.result;
+    }, false);
+
+    if (data) {
+      reader.readAsDataURL(data);
+    }
   }
 }

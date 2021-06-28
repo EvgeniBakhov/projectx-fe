@@ -17,8 +17,8 @@ export class ReservationService {
     return this.http.get<Reservation[]>(this.BASE_URL + `/${user.id}`);
   }
 
-  createReservation(eventId: number): Observable<any> {
-    return this.http.post(this.BASE_URL, {});
+  createReservation(eventId: number): Observable<Reservation> {
+    return this.http.post<Reservation>(`${this.BASE_URL}/${eventId}`, {});
   }
 
   cancelReservation(reservationId: number) {
@@ -27,5 +27,9 @@ export class ReservationService {
 
   getReservationsForCurrentUser(): Observable<Reservation[]> {
     return this.http.get<Reservation[]>(this.BASE_URL);
+  }
+
+  getReservationById(id: number): Observable<Reservation> {
+    return this.http.get<Reservation>(`${this.BASE_URL}/${id}`);
   }
 }

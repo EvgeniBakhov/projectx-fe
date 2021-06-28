@@ -27,4 +27,19 @@ export class EventService {
   getCities(): Observable<string[]> {
     return this.http.get<string[]>(`${this.BASE_URL}/cities`);
   }
+
+  getAllEventsWithFilters(city: string,
+                          type: string,
+                          placeType: string,
+                          status: string,
+                          ageRestrictions: string): Observable<Event[]> {
+    return this.http.get<Event[]>(`${this.BASE_URL}/all`, {
+      params: {
+        city: city,
+        type: type,
+        placeType: placeType,
+        status: status,
+        ageRestrictions: ageRestrictions
+      }});
+  }
 }

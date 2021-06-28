@@ -1,6 +1,7 @@
-<mat-card>
+<mat-card (click)="navigateToEvent()">
     <mat-card-content>
-        <img [src]="event.thumbnail">
+        <img *ngIf="thumbnail" [src]="thumbnail">
+        <img *ngIf="!thumbnail" src="assets/mock/default-ff.svg">
         <div>{{event.name}}</div>
     </mat-card-content>
 </mat-card>

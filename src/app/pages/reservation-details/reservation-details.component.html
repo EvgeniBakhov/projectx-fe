@@ -1,0 +1,22 @@
+<div class="reservation-container">
+    <div class="reservation-info">
+        <div class="names">{{reservation.user.firstName}} {{reservation.user.lastName}}</div>
+        <div class="title event-name">{{reservation.event.name}}</div>
+        <div class="start-time mat-subheading-1">
+            Start time:
+            <div class="time">{{reservation.event.startDate | date: 'MMM dd yyyy hh:mm'}}</div>
+        </div>
+        <div class="pictures">
+            <img class="stamp" [src]="stamp">
+            <div class="qr-code" *ngIf="qrVisible">
+                <div>QR code for your reservation:</div>
+                <qrcode [qrdata]="reservationUrl" [width]="150" [allowEmptyString]="true" [errorCorrectionLevel]="'M'"></qrcode>
+                <div>Enjoy your time!</div>
+            </div>
+            <div class="qr-code" *ngIf="!qrVisible">
+                <div>Click here to retrieve your QR code:</div>
+                <span class="material-icons-outlined clickable" (click)="toggleQrCode()">qr_code</span>
+            </div>
+        </div>
+    </div>
+</div>

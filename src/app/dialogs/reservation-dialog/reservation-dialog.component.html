@@ -1,7 +1,7 @@
 <fury-loading-indicator></fury-loading-indicator>
 <mat-dialog-content>
     <div class="reservation-container">
-        <img [src]="event.thumbnail">
+        <img [src]="event.thumbnail ? thumbnail : 'assets/mock/default-ff.svg'">
         <div class="reservation-info">
             <div class="names">{{user.firstName}} {{user.lastName}}</div>
             <div class="title event-name">{{event.name}}</div>
@@ -11,10 +11,14 @@
             </div>
             <div class="pictures">
                 <img class="stamp" src="assets/img/icons/svg/reservation-stamp.svg">
-                <div class="qr-code">
+                <div class="qr-code" *ngIf="qrVisible">
                     <div>QR code for your reservation:</div>
-                    <qrcode [qrdata]="reservationUrl" [width]="80" [errorCorrectionLevel]="'M'"></qrcode>
+                    <qrcode [qrdata]="reservationUrl" [width]="80" [allowEmptyString]="true" [errorCorrectionLevel]="'M'"></qrcode>
                     <div>Enjoy your time!</div>
+                </div>
+                <div class="qr-code" *ngIf="!qrVisible">
+                    <div>Click here to retrieve your QR code:</div>
+                    <span class="material-icons-outlined clickable" (click)="toggleQrCode()">qr_code</span>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@
   .reservation-info {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
   }
 
   .names {
@@ -46,6 +46,22 @@
     height: 100%;
     align-items: flex-end;
 
+    .qr-code {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font: small-caption;
+
+      .material-icons-outlined {
+        font-size: 50px;
+        color: gray;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
     img {
       width: 50%;
     }
@@ -70,34 +86,19 @@
       10%{
         opacity:.50;
         transform-origin: 50% 50%;
-        transform: rotate(-2deg) scale(5);
+        transform: scale(5);
         transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
       }
       100%{
         opacity:1;
-        transform: rotate(-15deg) scale(1);
-      }
-    }
-    .qr-code {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font: small-caption;
-
-      .material-icons-outlined {
-        font-size: 32px;
-        color: gray;
-        &:hover {
-          color: black;
-        }
+        transform: scale(1);
       }
     }
 
   }
-
 }
 
 .clickable {
   cursor: pointer;
 }
+

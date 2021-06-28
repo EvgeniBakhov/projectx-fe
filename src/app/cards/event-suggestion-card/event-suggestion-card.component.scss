@@ -1,4 +1,10 @@
 mat-card {
+  margin: 4px;
+  cursor: pointer;
+  &:hover {
+    background: #e3e3e3;
+  }
+
   mat-card-content {
     display: flex;
     flex-direction: row;

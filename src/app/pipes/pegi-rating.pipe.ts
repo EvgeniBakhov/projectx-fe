@@ -6,13 +6,14 @@ import {AgeRestriction} from '../model/enums/age-restriction';
 })
 export class PegiRatingPipe implements PipeTransform {
 
-  transform(value: AgeRestriction): string {
+  transform(value: string): string {
     switch (value) {
-      case AgeRestriction.EVERYONE: return './assets/img/icons/pegi/pegi-3.svg';
-      case AgeRestriction.EVERYONE_SEVEN_PLUS: return './assets/img/icons/pegi/pegi-7.svg';
-      case AgeRestriction.TEEN: return './assets/img/icons/pegi/pegi-12.svg';
-      case AgeRestriction.MATURE: return './assets/img/icons/pegi/pegi-16.svg';
-      case AgeRestriction.ADULT: return './assets/img/icons/pegi/pegi-18.svg';
+      case 'EVERYONE': return './assets/img/icons/pegi/pegi-3.svg';
+      case 'EVERYONE_SEVEN_PLUS': return './assets/img/icons/pegi/pegi-7.svg';
+      case 'TEEN': return './assets/img/icons/pegi/pegi-12.svg';
+      case 'MATURE': return './assets/img/icons/pegi/pegi-16.svg';
+      case 'ADULT': return './assets/img/icons/pegi/pegi-18.svg';
+      default: return './assets/img/icons/pegi/pegi-18.svg';
     }
   }
 }

@@ -3,7 +3,6 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   fest-finder-dashboard-banner {
     display: flex;
@@ -17,6 +16,7 @@
     .top-event-container {
       display: flex;
       width: 50%;
+      height: 65vh;
 
       fest-finder-top-event-card {
         width: 100%;
@@ -25,6 +25,8 @@
 
     .event-suggestion-container {
       width: 50%;
+      height: 67vh;
+      overflow: auto;
       .empty-suggested-events {
         display: flex;
         justify-content: center;

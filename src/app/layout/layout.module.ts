@@ -15,6 +15,7 @@ import { NavigationModule } from './navigation/navigation.module';
 import { EventSearchComponent } from './event-search/event-search.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { EstateSearchComponent } from './estate-search/estate-search.component';
+import {CardsModule} from '../cards/cards.module';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { EstateSearchComponent } from './estate-search/estate-search.component';
         BackdropModule,
         ConfigPanelModule,
         NavigationModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CardsModule
     ],
     exports: [
         EventSearchComponent,

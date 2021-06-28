@@ -22,7 +22,9 @@ export class EventCardComponent implements OnInit {
   ngOnInit(): void {
     this.dotColor = this.getDotColor();
     this.eventService.getThumbnail(this.event.id).subscribe(data => {
-      this.createImageFromBlob(data);
+      if (!(data.size === 0)) {
+        this.createImageFromBlob(data);
+      }
     });
   }
 
@@ -30,6 +32,7 @@ export class EventCardComponent implements OnInit {
     const reader = new FileReader();
     reader.addEventListener('load', () => {
       this.thumbnail = reader.result;
+      console.log(this.thumbnail);
     }, false);
 
     if (data) {
@@ -38,11 +41,11 @@ export class EventCardComponent implements OnInit {
   }
 
   private getDotColor(): string {
-    switch (this.event.status) {
-      case EventStatus.PLANNED: return 'bluedot';
-      case EventStatus.CANCELLED: return 'reddot';
-      case EventStatus.POSTPONED: return 'orangedot';
-      case EventStatus.RIGHT_NOW: return 'greendot';
+    switch (this.event.status.toString()) {
+      case 'PLANNED': return 'bluedot';
+      case 'CANCELLED': return 'reddot';
+      case 'POSTPONED': return 'orangedot';
+      case 'RIGHT_NOW': return 'greendot';
     }
   }
 
