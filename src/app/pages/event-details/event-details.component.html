@@ -4,7 +4,7 @@
             <fury-card-content>
                 <h1 class="margin-0 event-name">{{event.name}}</h1>
                 <div class="carousel-container">
-                    <fest-finder-carousel [slides]="event.pictures.length > 0 ? event.pictures : ['./assets/mock/default-ff.svg']"></fest-finder-carousel>
+                    <fest-finder-carousel [slides]="event.pictures.length > 0 ? pictures : ['./assets/mock/event-picture.jpg']"></fest-finder-carousel>
                 </div>
                 <div class="event-data" fxLayout.lt-md="column" fxLayout.gt-md="row">
                     <div class="data-container" fxLayout.lt-sm="column">

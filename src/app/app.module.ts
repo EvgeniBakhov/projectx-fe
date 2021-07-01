@@ -50,6 +50,7 @@ import {MatInputModule} from '@angular/material/input';
 import {LoadingOverlayModule} from '../@fury/shared/loading-overlay/loading-overlay.module';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReservationDetailsComponent } from './pages/reservation-details/reservation-details.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { ReservationDetailsComponent } from './pages/reservation-details/reserva
         MatSelectModule,
         MatInputModule,
         LoadingOverlayModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatDatepickerModule
     ],
   declarations: [
       AppComponent,

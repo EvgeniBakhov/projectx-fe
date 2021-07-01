@@ -3,7 +3,7 @@
         <fury-card>
             <fury-card-content>
                 <div class="carousel-container">
-                    <fest-finder-carousel [slides]="estate.pictures.length > 0 ? estate.pictures : ['./assets/mock/default-ff.svg']"></fest-finder-carousel>
+                    <fest-finder-carousel [slides]="estate.pictures.length > 0 ? pictures : ['./assets/mock/default-ff.svg']"></fest-finder-carousel>
                 </div>
                 <div class="event-data" fxLayout.lt-md="column" fxLayout.gt-md="row">
                     <div class="data-container" fxLayout.lt-sm="column">
@@ -14,9 +14,10 @@
                             <fest-finder-estate-data-card [estate]="estate"></fest-finder-estate-data-card>
                         </div>
                     </div>
-                    <div class="data-container">
-                        <span class="description-header">Description:</span>
-                        <mat-card>{{estate.description}}</mat-card>
+                    <div class="data-container description-container">
+                        <mat-card>
+                            <span class="description-header">Description:</span>
+                        {{estate.description}}</mat-card>
                     </div>
                 </div>
             </fury-card-content>

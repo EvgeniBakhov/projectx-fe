@@ -1,1 +1,21 @@
+<mat-dialog-content>
+    <div class="dialog-header">Create booking</div>
+    <div class="form" [formGroup]="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+                <input matStartDate required formControlName="start" placeholder="Start date">
+                <input matEndDate required formControlName="end" placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
 
+            <mat-error *ngIf="form.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+            <mat-error *ngIf="form.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+        </mat-form-field>
+        <div class="price">Total price: {{calculateSum()}} $</div>
+        <button class="button-center" mat-raised-button type="submit" color="primary" (click)="createBooking()">CREATE
+            BOOKING
+        </button>
+    </div>
+</mat-dialog-content>

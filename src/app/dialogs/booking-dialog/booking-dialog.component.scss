@@ -1,0 +1,24 @@
+mat-dialog-content {
+
+  .dialog-header {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    font-size: 18px;
+    font-family: system-ui;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .price {
+      display: flex;
+      justify-content: center;
+      padding: 8px;
+      font-family: system-ui;
+    }
+  }
+}
+

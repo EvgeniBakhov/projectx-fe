@@ -2,7 +2,7 @@ import {Estate} from './estate';
 import {User} from './user';
 import {BookingStatus} from './enums/booking-status';
 
-export interface Booking {
+export class Booking {
     id: number;
     estate: Estate;
     fromDate: Date;
@@ -11,4 +11,10 @@ export interface Booking {
     user: User;
     status: BookingStatus;
     comment: string;
+
+
+    constructor(fromDate: Date, toDate: Date) {
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+    }
 }

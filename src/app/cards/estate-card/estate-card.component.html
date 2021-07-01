@@ -9,7 +9,7 @@
         </div>
     </mat-card-header>
     <mat-card-content>
-        <img [src]="estate.pictures ? estate.pictures[0] : 'assets/img/estate_default.jpeg'">
+        <img [src]="estate.pictures.length > 0 ? picture : 'assets/mock/default-ff.svg'">
         <div class="description fade">{{estate.description}}</div>
     </mat-card-content>
     <mat-card-footer>

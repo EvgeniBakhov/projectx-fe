@@ -4,11 +4,11 @@
   margin: 8px;
 }
 mat-card {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  max-height: 500px;
 
   &:hover{
     margin-top:-10px;

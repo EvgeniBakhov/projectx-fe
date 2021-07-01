@@ -1,12 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Event} from '../../model/event';
 import {EventStatus} from '../../model/enums/event-status';
-import {Color} from '../../pages/apps/inbox/shared/color.interface';
-import {PlaceType} from '../../model/enums/place-type';
-import {EventType} from '../../model/enums/event-type';
 import {MatDialog} from '@angular/material/dialog';
 import {ReservationDialogComponent} from '../../dialogs/reservation-dialog/reservation-dialog.component';
-import {AgeRestriction} from '../../model/enums/age-restriction';
 
 @Component({
   selector: 'fest-finder-event-data-card',
@@ -18,7 +14,6 @@ export class EventDataCardComponent implements OnInit {
   @Input() thumbnail: File;
 
   dataLoaded: boolean;
-  chipColor: Color;
   placeTypeIcon: string;
   placeTypeText: string;
   eventTypeIcon: string;

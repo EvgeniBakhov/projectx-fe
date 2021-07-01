@@ -1,13 +1,14 @@
+<fury-loading-overlay></fury-loading-overlay>
 <fury-page class="dashboard" fxLayout.lt-sm="row">
-    <fest-finder-estate-search class="sm-w-100"></fest-finder-estate-search>
-    <div *ngIf="estates.length > 0">
-        <div *ngFor="let estate in estates">
-            <fest-finder-estate-card class="card-container" fxLayoutGap="8px"
-                                     [estate]="estate"></fest-finder-estate-card>
+    <fest-finder-estate-search class="sm-w-100" (searchEstate)="loadEstates($event)"></fest-finder-estate-search>
+    <div class="card-container" *ngIf="estates.length !== 0">
+        <div *ngFor="let estate of estates">
+            <fest-finder-estate-card fxLayoutGap="8px" [estate]="estate"></fest-finder-estate-card>
         </div>
     </div>
     <div *ngIf="estates.length === 0">
-        <div class="subheading-2 screen-center">There is no estates matching criteria. Try another search.</div>
+        <div class="subheading-2 screen-center">There is no places matching criteria. Try another search.</div>
     </div>
 </fury-page>
+
 

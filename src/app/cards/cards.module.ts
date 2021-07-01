@@ -16,6 +16,7 @@ import { EventSuggestionCardComponent } from './event-suggestion-card/event-sugg
 import { DashboardBannerComponent } from './dashboard-banner/dashboard-banner.component';
 import { EstateDataCardComponent } from './estate-data-card/estate-data-card.component';
 import {LoadingOverlayModule} from '../../@fury/shared/loading-overlay/loading-overlay.module';
+import {PictureService} from '../service/picture.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,15 @@ import {LoadingOverlayModule} from '../../@fury/shared/loading-overlay/loading-o
     imports: [
         CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule, LoadingOverlayModule
     ],
-    exports: [EstateCardComponent, EventCardComponent, UserInfoCardComponent, EventDataCardComponent, DashboardBannerComponent, EventSuggestionCardComponent, TopEventCardComponent, EstateDataCardComponent, AddressPipe, PegiRatingPipe]
+    exports: [EstateCardComponent,
+      EventCardComponent,
+      UserInfoCardComponent,
+      EventDataCardComponent,
+      DashboardBannerComponent,
+      EventSuggestionCardComponent,
+      TopEventCardComponent,
+      EstateDataCardComponent,
+      AddressPipe, PegiRatingPipe],
+  providers: [PictureService]
 })
 export class CardsModule { }
