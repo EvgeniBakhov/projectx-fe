@@ -11,7 +11,6 @@ import { UserInfoCardComponent } from './user-info-card/user-info-card.component
 import { EventDataCardComponent } from './event-data-card/event-data-card.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
-import {SharedModule} from '../shared/shared.module';
 import { EventSuggestionCardComponent } from './event-suggestion-card/event-suggestion-card.component';
 import { DashboardBannerComponent } from './dashboard-banner/dashboard-banner.component';
 import { EstateDataCardComponent } from './estate-data-card/estate-data-card.component';
@@ -32,7 +31,7 @@ import {PictureService} from '../service/picture.service';
     EstateDataCardComponent
   ],
     imports: [
-        CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, SharedModule, LoadingOverlayModule
+        CommonModule, MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, LoadingOverlayModule
     ],
     exports: [EstateCardComponent,
       EventCardComponent,

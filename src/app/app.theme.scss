@@ -37,7 +37,6 @@ $dark-theme: mat-dark-theme((
 
 
   @import "./pages/forms/form-wizard/form-wizard.component.theme";
-  @import "./layout/config-panel/config-panel.component.theme";
 }
 
 .fury-light {
@@ -47,7 +46,6 @@ $dark-theme: mat-dark-theme((
   color: $theme-text;
 
   @import "./pages/forms/form-wizard/form-wizard.component.theme";
-  @import "./layout/config-panel/config-panel.component.theme";
 }
 
 .fury-dark {
@@ -61,7 +59,6 @@ $dark-theme: mat-dark-theme((
 
 
   @import "./pages/forms/form-wizard/form-wizard.component.theme";
-  @import "./layout/config-panel/config-panel.component.theme";
 }
 
 .fury-flat {
@@ -72,5 +69,4 @@ $dark-theme: mat-dark-theme((
 
 
   @import "./pages/forms/form-wizard/form-wizard.component.theme";
-  @import "./layout/config-panel/config-panel.component.theme";
 }

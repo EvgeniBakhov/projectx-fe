@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Estate} from '../../model/estate';
 import {Router} from '@angular/router';
 import {PictureService} from '../../service/picture.service';
