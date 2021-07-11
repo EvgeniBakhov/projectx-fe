@@ -36,6 +36,7 @@ export class AuthService {
     }
 
     logOut() {
+        this.http.get('http://localhost:8080/logout');
         sessionStorage.removeItem(this.USERNAME);
         sessionStorage.removeItem(this.TOKEN);
     }

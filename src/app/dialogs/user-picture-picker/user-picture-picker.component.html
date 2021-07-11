@@ -3,7 +3,7 @@
         <span>Choose file for upload</span>
     </div>
     <div>
-        <input type="file" (change)="onFileChanged($event)" accept=".image/jpeg">
+        <input type="file" (change)="onFileChanged($event)">
         <input type="button" [mat-dialog-close]="" (click)="onUpload()" value="Upload">
     </div>
 </div>
